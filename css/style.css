@@ -78,6 +78,7 @@ body {
     color: #006993;
     font-size: 1em;
 	font-weight:normal;
+	width:46%;
 	}
 
 #entry-form form .mt-minus-label{
@@ -289,8 +290,25 @@ body {
 	float:left;
 	 top:6px;
 	 margin-top: 1px;
-	 
 	}
+
+.callout, #entry-form form .callout {
+  text-align: center;
+  text-decoration: none;
+  font-weight: normal;
+  font-size:10px;
+  padding:1px;
+}
+
+.callout-must, #entry-form form .callout-must {
+    color: #ff6666;
+    border-radius: 2px;
+    border: 1px solid #ff6666;
+    margin: 0 0 0 4px;
+    padding: 0 2px;
+    font-size: 10px;
+	float:right;
+}
 
 @media only screen and (max-width: 768px) {
 #entry-form .pull-right {
@@ -332,5 +350,8 @@ body {
 	margin-left:0;
 	float:left;
 	}
-
+#entry-form form select{
+	padding:0 5px;
+	width: 220px;
+	}
 }
