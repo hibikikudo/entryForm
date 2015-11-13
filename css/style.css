@@ -1,19 +1,28 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 body {
-  background-color: #e6e6e6;
-  font-size: 100%;
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
+    width: 100%;
+    height: 100%;
+    color: #666666;
+    line-height: 1.4;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro W3",メイリオ,Meiryo,"ＭＳ Ｐゴシック",sans-serif;}
+
+#entry-form .is-boxShadow {
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.12);
 }
 
-div, textarea, input {
+#entry-form .mb1em{
+	margin-bottom:1em;
+	}
+
+#entry-form div,#entry-form  textarea,#entry-form  input {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.container {
-  max-width: 510px;
+#entry-form .container {
+  max-width: 542px;
   min-width: 324px;
   margin: 50px auto 0px;
   background-color: #fff;
@@ -21,163 +30,307 @@ div, textarea, input {
   border-bottom: 3px solid #ccc;
 }
 
-.row {
+#entry-form .row {
   width: 100%;
   margin: 0 0 1em 0;
   padding: 0 2.5em;
 }
-.row.header {
+#entry-form .row.header {
   padding: 1.5em 2.5em;
   border-bottom: 1px solid #ccc;
   background: url(http://niiiick.com/files/blur-city-1.jpg) left -80px;
   color: #fff;
 }
-.row.body {
+#entry-form .row.body {
   padding: .5em 2.5em 1em;
 }
 
-.pull-right {
+#entry-form .pull-right {
   float: right;
 }
 
-h1 {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
+#entry-form h1 {
   display: inline-block;
-  font-weight: 100;
   font-size: 2.8125em;
+  font-weight: 400;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   margin: 0 0 0.1em 0;
   padding: 0 0 0.4em 0;
 }
 
-h3 {
-  font-family: 'Lato', sans-serif;
+#entry-form h3 {
   font-weight: 400;
-  font-size: 1.25em;
-  margin: 1em 0 0.4em 0;
+  font-size: 1em;
+  margin: 1em 0 0 0;
 }
 
-.btn {
+#entry-form h4 {
+	font-size:1.3em;
+	font-weight:normal;
+/*    border-left: 3px #00a7ea solid;
+    padding:0 0.5em;*/
+    color:#666666;
+	margin:0;
+	}
+	
+#entry-form h5 {
+	margin: 0 0 0.5em 0;
+    color: #006993;
+    font-size: 1em;
+	font-weight:normal;
+	}
+
+#entry-form form .mt-minus-label{
+	margin-top:-1.8em;
+	}
+
+#entry-form .btn {
   font-size: 1.0625em;
   display: inline-block;
-  padding: 0.74em 1.5em;
+  padding: 0.6em 1.5em 0.5em 1.55em;
   margin: 1.5em 0 0;
   color: #fff;
-  border-width: 0 0 0 0;
-  border-bottom: 5px solid;
-  text-transform: uppercase;
   background-color: #b3b3b3;
-  border-bottom-color: #8c8c8c;
-  font-family: 'Lato', sans-serif;
   font-weight: 300;
+  	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	border-radius:20px;
+	
 }
-.btn:hover {
+#entry-form .btn:hover {
   background-color: #bfbfbf;
 }
-.btn.btn-submit {
-  background-color: #4f6fad;
-  border-bottom-color: #374d78;
+#entry-form .btn.btn-submit {
+  background-color: #ff6c00;
+  font-size:1.2em;
 }
-.btn.btn-submit:hover {
-  background-color: #5f7db6;
+#entry-form .btn.btn-submit:hover {
+  background-color: #ff8932;
 }
 
-form {
+#entry-form form {
   max-width: 100%;
   display: block;
 }
-form ul {
+#entry-form form ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-form ul li {
+#entry-form form ul li {
   margin: 0 0 0.25em 0;
   clear: both;
   display: inline-block;
   width: 100%;
 }
-form ul li:last-child {
+
+#entry-form form ul li:last-child, #entry-form form ul .margin-0 {
   margin: 0;
 }
-form ul li p {
+#entry-form form ul li p {
   margin: 0;
   padding: 0;
   float: left;
+  
 }
-form ul li p.right {
+
+#entry-form form ul li .grid-220{
+	width:220px;
+	}
+
+#entry-form form ul li p.right {
   float: right;
 }
-form ul li .divider {
+
+#entry-form form ul li p.float-left {
+  float: left;
+  margin-left:2em;
+}
+
+#entry-form form ul li .divider {
   margin: 0.5em 0 0.5em 0;
   border: 0;
   height: 1px;
   width: 100%;
   display: block;
   background-color: #4f6fad;
-  background-image: linear-gradient(to right, #ee9cb4, #4f6fad);
+  background-image: linear-gradient(to right, #00a7ea, #4f6fad);
 }
-form ul li .req {
+
+#entry-form form ul li .divider2 {
+  margin: 0 0 1em 0;
+  border: 0;
+  height: 1px;
+  width: 100%;
+  display: block;
+  background-color: #4f6fad;
+  background-image: linear-gradient(to right, #00a7ea, #4f6fad);
+}
+
+#entry-form form ul li .req {
   color: #ee9cb4;
 }
-form label {
+#entry-form form label {
   display: block;
   margin: 0 0 0.5em 0;
-  color: #4f6fad;
+  color: #006993;
   font-size: 1em;
 }
-form input {
+
+#entry-form form .mt-label{
+	margin-top:0.8em;
+	color:#555;
+	width:80px;
+	}
+
+#entry-form form input {
   margin: 0 0 0.5em 0;
   border: 1px solid #ccc;
   padding: 6px 10px;
   color: #555;
   font-size: 1em;
+  width:220px;
 }
-form textarea {
+#entry-form form textarea {
   border: 1px solid #ccc;
   padding: 6px 10px;
   width: 100%;
   color: #555;
+  resize: vertical;  
+    overflow: auto;
 }
-form small {
+#entry-form form small {
   color: #4f6fad;
   margin: 0 0 0 0.5em;
 }
 
-@media only screen and (max-width: 480px) {
-  .pull-right {
+#entry-form form .form-control {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  background-image: none;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+#entry-form form select {
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  display: block;
+  height: 34px;
+  line-height: 1.42857;
+  padding: 0 104px 0 5px;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  width: 100%;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
+#entry-form .div-center{
+	display:block;
+	text-align:center;
+}
+
+#entry-form .div-center button{
+	margin:0 auto;
+}
+#entry-form .mb5{
+	margin-bottom:5px;}
+
+#entry-form .mb9{
+	margin-bottom:9px;}
+	
+#entry-form .ml-pref-cell{
+	margin-left:76px;
+}
+	
+#entry-form form input[type="radio"],#entry-form form input[type="checkbox"] {
+  margin-top: 1px \9;
+  line-height:normal;
+  vertical-align:middle;
+}
+#entry-form form input .radio,#entry-form form input.checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#entry-form form input .radio label,#entry-form form input .checkbox label {
+  min-height: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+#entry-form form input .radio input[type="radio"],#entry-form form input .radio-inline input[type="radio"], #entry-form form input .checkbox input[type="checkbox"],#entry-form form input .checkbox-inline input[type="checkbox"] {
+  position: absolute;
+  margin-top: 4px \9;
+  margin-left: -20px;
+  top:4px;
+}
+
+#entry-form form .radio-inline,#entry-form form .checkbox-inline {
+  display: inline-block;
+  padding:0 10px;
+  margin-bottom: 0;
+  font-weight: normal;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+
+#entry-form form .radio-inline{
+	width:1rem;
+	display:inline;
+	float:left;
+	 top:6px;
+	 margin-top: 1px;
+	 
+	}
+
+@media only screen and (max-width: 768px) {
+#entry-form .pull-right {
     float: none;
   }
 
-  input {
+#entry-form input {
     width: 100%;
   }
 
-  label {
+#entry-form label {
     width: 100%;
     display: inline-block;
     float: left;
     clear: both;
   }
 
-  li, p {
+#entry-form li, p {
     width: 100%;
   }
 
-  input.btn {
+#entry-form input.btn {
     margin: 1.5em 0 0.5em;
   }
 
-  h1 {
+#entry-form h1 {
     font-size: 2.25em;
   }
 
-  h3 {
+#entry-form h3 {
     font-size: 1.125em;
   }
 
-  li small {
+#entry-form li small {
     display: none;
   }
+#entry-form form .mt-label {
+	display:inline-block;
+	margin-left:0;
+	float:left;
+	}
+
 }
