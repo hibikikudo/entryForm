@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/jquery-ui.css"/>
 </head>
 
 <body id="entry-form">
@@ -16,7 +17,7 @@
       ご登録についてご不明点がある場合もお気軽にお問い合わせ下さい。</h3>
   </div>
   <div class="row body">
-    <form action="#">
+    <form name="signup" class="form" novalidate>
       <h4>基本情報をご入力ください</h4>
       <ul>
         <li>
@@ -25,41 +26,82 @@
       </ul>
       <ul class="mb1em">
         <li>
-          <p class="left">
-            <label for="first_name">姓 <span class="callout callout-must">必須</span></label>
-            <input type="text" name="last_name" placeholder="山田" />
-          </p>
-          <p class="pull-right">
-            <label for="last_name">名<span class="callout callout-must">必須</span></label>
-            <input type="text" name="first_name" placeholder="太郎" />
-          </p>
+          <div class="left" data-states-for="family_name_kanji">
+            <label for="family_name_kanji" >姓 <span class="callout callout-must">必須</span></label>
+            <input type="text"
+                 id="family_name_kanji"
+                 name="family_name_kanji"
+                 class="form-input form-addon"
+                 placeholder="山田"
+                 required>
+                 
+            <div data-errors-for="family_name_kanji"> <small class="form-error is-hidden"
+                 data-errors-when="valueMissing"> 姓を漢字で入力してください。 </small> </div>
+          </div>
+          <div class="pull-right" data-states-for="first_name_kanji">
+            <label for="first_name_kanji">名<span class="callout callout-must">必須</span></label>
+            <input type="text"
+                 id="first_name_kanji"
+                 name="first_name_kanji"
+                 class="form-input form-addon"
+                 placeholder="太郎"
+                 required>
+            <div data-errors-for="first_name_kanji"> <small class="form-error is-hidden"
+                 data-errors-when="valueMissing"> 名を漢字で入力してください。 </small> </div>
+          </div>
         </li>
         <li>
-          <p class="left">
-            <label for="first_name">セイ<span class="callout callout-must">必須</span></label>
-            <input type="text" name="last_name" placeholder="ヤマダ" />
-          </p>
-          <p class="pull-right">
-            <label for="last_name">メイ<span class="callout callout-must">必須</span></label>
-            <input type="text" name="first_name" placeholder="タロウ" />
-          </p>
+          <div class="left" data-states-for="family_name_kana">
+            <label for="family_name_kanji" >セイ <span class="callout callout-must">必須</span></label>
+            <input type="text"
+                 id="family_name_kana"
+                 name="family_name_kana"
+                 class="form-input form-addon"
+                 placeholder="ヤマダ"
+                 required>
+                 
+            <div data-errors-for="family_name_kana"> <small class="form-error is-hidden"
+                 data-errors-when="valueMissing"> 姓をカタカナで入力してください。 </small> </div>
+          </div>
+          
+          <div class="pull-right" data-states-for="first_name_kana">
+            <label for="first_name_kana">メイ<span class="callout callout-must">必須</span></label>
+            <input type="text"
+                 id="first_name_kana"
+                 name="first_name_kana"
+                 class="form-input form-addon"
+                 placeholder="タロウ"
+                 required>
+            <div data-errors-for="first_name_kana"> <small class="form-error is-hidden"
+                 data-errors-when="valueMissing"> 名をカタカナで入力してください。 </small> </div>
+          </div>
         </li>
         <h5>性別<span class="callout callout-must">必須</span></h5>
+        
         <li>
+        <div class="left" data-states-for="radio">
           <p class="left">
-            <label class="mt-label">
-              <input type="radio" name="radio" id="radio1" value="radio1" class="radio-inline">
+            <label class="mt-label" for="radio">
+              <input type="radio" name="radio" id="radio1" value="radio1" class="radio-inline" required>
               男性</label>
+              
           </p>
           <p class="float-left">
-            <label class="mt-label">
-              <input type="radio" name="radio" id="radio2" value="radio2" class="radio-inline">
+            <label class="mt-label" for="sex">
+              <input type="radio" name="radio" id="radio2" value="radio2" class="radio-inline" required>
               女性</label>
+              
           </p>
-          <p class=" ml-pref-cell mt-minus-label">
-            <label for="address">お住まい<span class="callout callout-must">必須</span></label>
-            <select name="prefecture">
-              <option value="">都道府県の選択</option>
+          <div data-errors-for="radio" class=" clearfix"> <small class="form-error is-hidden"
+                 data-errors-when="valueMissing"> 性別を選んでください。 </small> </div>
+          </div>
+          <p class=" ml-pref-cell mt-minus-label" data-states-for="pref">
+            <label for="pref">お住まい<span class="callout callout-must">必須</span></label>
+            <select name="pref"
+            		class="form-input form-addon"
+            		id="pref"
+                    required="required">
+              <option value="" selected disabled>一つ選択してください</option>
               <optgroup label="北海道・東北">
               <option value="北海道">北海道</option>
               <option value="青森県">青森県</option>
@@ -125,16 +167,43 @@
               </optgroup>
             </select>
           </p>
+          <div data-errors-for="pref" class=" ml-pref-cell"> <small class="form-error is-hidden"
+                 data-errors-when="valueMissing"> お住まいを選んでください。 </small> </div>
         </li>
         <li>
-          <p class="grid-220 mb9">
+          <div class="left grid-220 mb9" data-states-for="tel">
             <label for="tell">電話番号<span class="callout callout-must">必須</span></label>
-            <input type="tel" name="tel" placeholder="090XXXXXXXX" />
-          </p>
-          <p class="pull-right">
-            <label for="email">e-mail<span class="callout callout-must">必須</span></label>
-            <input type="email" name="email" placeholder="example@mail.com" />
-          </p>
+            <input type="tel"
+                 id="tel"
+                 name="tel"
+                 class="form-input form-addon"
+                 placeholder="ハイフン無し半角数字"
+                 pattern="^[0-9()+\s]{8,13}$"
+                 required>
+                 <div data-errors-for="tel"> <small class="form-error is-hidden"
+                 data-errors-when="valueMissing"> ハイフン無し半角数字で入力してください。 </small> </div>
+          </div>
+          <div class="pull-right" data-states-for="email">
+            <label for="email">email<span class="callout callout-must">必須</span></label>
+            <input type="email"
+                 id="email"
+                 name="email"
+                 class="form-input form-addon"
+                 placeholder="example@mail.com"
+                 required>
+            <div data-errors-for="email">
+          <small class="form-error is-hidden"
+                 data-errors-when="valueMissing">
+            英数小文字で入力してください。
+          </small>
+          
+          <small class="form-error is-hidden"
+                 data-errors-when="typeMismatch">
+            英数小文字で入力してください。
+                      </small>
+        </div>
+        </div>
+          
         </li>
       </ul>
       <h4>キャリアカウンセリングを予約する</h4>
@@ -143,21 +212,32 @@
           <div class="divider2"></div>
         </li>
         <li>
-          <p>
+          <div>
             <label for="reserveday">キャリアカウンセリング希望日<span class="callout callout-must">必須</span></label>
-            <input type="text" placeholder="クリックしてください" id="calendar-from-03">
-          </p>
+            <input type="text" placeholder="クリックしてください" id="datepicker" />
+          </div>
         </li>
         <li>
           <label for="comments">ご希望・備考等あればお知らせください</label>
           <textarea cols="46" rows="3" name="comments"></textarea>
         </li>
         <li class="div-center">
-          <input class="btn btn-submit is-boxShadow" type="submit" value="登録を予約する！" />
+          <input class="btn btn-submit" type="submit" value="登録予約" />
         </li>
       </ul>
     </form>
   </div>
 </section>
+<script src="js/gentle_form.js"></script> 
+<script src="js/gentle_form_valid.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<script>
+  $(function() {
+    $.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
 </body>
 </html>

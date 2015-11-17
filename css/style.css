@@ -1,12 +1,13 @@
 body {
     width: 100%;
     height: 100%;
-    color: #666666;
+    color: #666;
     line-height: 1.4;
     font-size: 12px;
     letter-spacing: 0.2px;
     font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro W3",メイリオ,Meiryo,"ＭＳ Ｐゴシック",sans-serif;}
-
+.clearfix{
+	clear:both;}
 #entry-form .is-boxShadow {
   box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.12);
 }
@@ -38,7 +39,7 @@ body {
 #entry-form .row.header {
   padding: 1.5em 2.5em;
   border-bottom: 1px solid #ccc;
-  background: url(http://niiiick.com/files/blur-city-1.jpg) left -80px;
+  background: url(../img/Perfect_iOS_7_Style_Blur_Background.jpg);
   color: #fff;
 }
 #entry-form .row.body {
@@ -88,7 +89,7 @@ body {
 #entry-form .btn {
   font-size: 1.0625em;
   display: inline-block;
-  padding: 0.6em 1.5em 0.5em 1.55em;
+  padding: 0.35em 1.5em 0.25em 1.5em;
   margin: 1.5em 0 0;
   color: #fff;
   background-color: #b3b3b3;
@@ -105,7 +106,7 @@ body {
 }
 #entry-form .btn.btn-submit {
   background-color: #ff6c00;
-  font-size:1.2em;
+  font-size:1.5em;
 }
 #entry-form .btn.btn-submit:hover {
   background-color: #ff8932;
@@ -130,7 +131,8 @@ body {
 #entry-form form ul li:last-child, #entry-form form ul .margin-0 {
   margin: 0;
 }
-#entry-form form ul li p {
+#entry-form form ul li p,
+#entry-form form ul li div {
   margin: 0;
   padding: 0;
   float: left;
@@ -173,6 +175,7 @@ body {
 #entry-form form ul li .req {
   color: #ee9cb4;
 }
+
 #entry-form form label {
   display: block;
   margin: 0 0 0.5em 0;
@@ -188,7 +191,6 @@ body {
 
 #entry-form form input {
   margin: 0 0 0.5em 0;
-  border: 1px solid #ccc;
   padding: 6px 10px;
   color: #555;
   font-size: 1em;
@@ -203,8 +205,8 @@ body {
     overflow: auto;
 }
 #entry-form form small {
-  color: #4f6fad;
-  margin: 0 0 0 0.5em;
+  color: #ff6666;
+  margin: 0 0 0 1em;
 }
 
 #entry-form form .form-control {
@@ -219,18 +221,14 @@ body {
 }
 
 #entry-form form select {
-  background-color: #fff;
   background-image: none;
-  border: 1px solid #ccc;
   display: block;
   height: 34px;
   line-height: 1.42857;
-  padding: 0 104px 0 5px;
+  padding: 0 10px 0 5px;
   transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-  width: 100%;
-  margin: 0;
-  font: inherit;
-  color: inherit;
+  width: 220px;
+  margin: 0 0 0.5em 0;
 }
 
 #entry-form .div-center{
@@ -308,6 +306,67 @@ body {
     padding: 0 2px;
     font-size: 10px;
 	float:right;
+}
+/*---------------------------------------------*\
+    GentleForm related styles
+\*---------------------------------------------*/
+.form-addon {
+  position: relative;
+  display: table;
+  width: 100%;
+  border: 1px solid #d1d1d1;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.form-addon .form-input,
+.form-addon .form-addon__addon {
+  display: table-cell;
+  vertical-align: middle;
+}
+.form-addon .form-input {
+  width: 100%;
+}
+.form-addon .form-addon__addon {
+  position: relative;
+  width: 40px;
+  text-align: center;
+}
+.form-addon .form-addon__addon:before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 0;
+  height: calc(100% - 8px);
+  border-right: 1px solid #bcdae5;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.form-addon .form-addon__icon {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 0;
+  -webkit-transition: -webkit-transform 150ms ease, opacity 150ms ease;
+          transition: transform 150ms ease, opacity 150ms ease;
+}
+.form-addon.is-valid [class*="icon-valid"], .form-addon.is-invalid [class*="icon-invalid"] {
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 1;
+}
+.form-addon.is-invalid {
+  background-color: #fef4f7;
+  border-color: #f989ab;
+}
+.form-addon.is-invalid .form-addon__icon {
+  color: #f42866;
+}
+.form-addon.is-invalid .form-addon__addon:before {
+  border-color: #f989ab;
 }
 
 @media only screen and (max-width: 768px) {
