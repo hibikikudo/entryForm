@@ -5,7 +5,8 @@ body {
     line-height: 1.4;
     font-size: 12px;
     letter-spacing: 0.2px;
-    font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro W3",メイリオ,Meiryo,"ＭＳ Ｐゴシック",sans-serif;}
+    font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro W3",メイリオ,Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+	}
 .clearfix{
 	clear:both;}
 #entry-form .is-boxShadow {
@@ -29,6 +30,7 @@ body {
   background-color: #fff;
   border: 1px solid #cfcfcf;
   border-bottom: 3px solid #ccc;
+  position:relative;
 }
 
 #entry-form .row {
@@ -247,7 +249,15 @@ body {
 	
 #entry-form .ml-pref-cell{
 	margin-left:76px;
+
 }
+#entry-form .ml-pref-valid{
+	position:absolute;
+	right:76px;
+	top:35px;
+}
+.pos-rel{
+	position:relative;}
 	
 #entry-form form input[type="radio"],#entry-form form input[type="checkbox"] {
   margin-top: 1px \9;

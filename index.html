@@ -78,7 +78,7 @@
         </li>
         <h5>性別<span class="callout callout-must">必須</span></h5>
         
-        <li>
+        <li class="pos-rel">
         <div class="left" data-states-for="radio">
           <p class="left">
             <label class="mt-label" for="radio">
@@ -101,7 +101,7 @@
             		class="form-input form-addon"
             		id="pref"
                     required="required">
-              <option value="" selected disabled>一つ選択してください</option>
+              <option value="" selected disabled>選択してください</option>
               <optgroup label="北海道・東北">
               <option value="北海道">北海道</option>
               <option value="青森県">青森県</option>
@@ -167,7 +167,7 @@
               </optgroup>
             </select>
           </p>
-          <div data-errors-for="pref" class=" ml-pref-cell"> <small class="form-error is-hidden"
+          <div data-errors-for="pref" class=" ml-pref-valid"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> お住まいを選んでください。 </small> </div>
         </li>
         <li>
@@ -212,9 +212,12 @@
           <div class="divider2"></div>
         </li>
         <li>
-          <div>
-            <label for="reserveday">キャリアカウンセリング希望日<span class="callout callout-must">必須</span></label>
-            <input type="text" placeholder="クリックしてください" id="datepicker" />
+          <div class="" data-states-for="datepicker">
+            <label for="datepicker">キャリアカウンセリング希望日<span class="callout callout-must">必須</span></label>
+            <input type="text" placeholder="選んでください" id="datepicker" name="datepicker" class="form-input form-addon" required>
+          </div>
+          <div class="clearfix" data-errors-for="datepicker"> <small class="form-error is-hidden"
+                 data-errors-when="valueMissing"> 希望日を選んでください。 </small>
           </div>
         </li>
         <li>
