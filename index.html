@@ -225,9 +225,10 @@
           
           <div class=" pull-right mt-minus-label2" data-states-for="datepicker">
             <label for="datepicker">時間<span class="callout callout-must">必須</span></label>
-            <select name="pref"
+            <select name="time"
             		class="form-input form-addon"
-            		id="pref"
+            		id="time"
+                    type="time"
                     required="required">
               <option value="" selected disabled>選択してください</option>
               <optgroup label="平日">
@@ -264,11 +265,14 @@
   </div>
 </section>
 <script src="js/gentle_form.js"></script> 
+<script src="js/gentle_form_valid.js"></script> 
 <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
 <script src="js/bootstrap-datepicker.ja.min.js"></script>
 <script type="text/javascript" src="js/jquery.timepicker.js"></script>
 <script type="text/javascript" src="js/site.js"></script>
+<script src="http://g.0-oo.net/gcalendar-holidays.js"></script>
+
 <script>
   $(function() {
     $.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
