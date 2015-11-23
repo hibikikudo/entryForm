@@ -10,6 +10,7 @@
 </head>
 
 <body id="entry-form">
+<div class="toaster" style="display: none;"> Yay, the form is valid! </div>
 <section class="entry-form-container">
   <div class="row header">
     <h1>登録予約フォーム</h1>
@@ -34,7 +35,6 @@
                  class="form-input form-addon"
                  placeholder="山田"
                  required>
-                 
             <div data-errors-for="family_name_kanji"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 姓を漢字で入力してください。 </small> </div>
           </div>
@@ -52,20 +52,18 @@
         </li>
         <li>
           <div class="left" data-states-for="family_name_kana">
-            <label for="family_name_kana" >セイ <span class="callout callout-must">必須</span></label>
+            <label for="family_name_kana" >姓 (フリガナ) <span class="callout callout-must">必須</span></label>
             <input type="text"
                  id="family_name_kana"
                  name="family_name_kana"
                  class="form-input form-addon"
                  placeholder="ヤマダ"
                  required>
-                 
             <div data-errors-for="family_name_kana"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 姓をカタカナで入力してください。 </small> </div>
           </div>
-          
           <div class="pull-right" data-states-for="first_name_kana">
-            <label for="first_name_kana">メイ<span class="callout callout-must">必須</span></label>
+            <label for="first_name_kana">名 (フリガナ)<span class="callout callout-must">必須</span></label>
             <input type="text"
                  id="first_name_kana"
                  name="first_name_kana"
@@ -77,22 +75,19 @@
           </div>
         </li>
         <h5>性別<span class="callout callout-must">必須</span></h5>
-        
         <li class="pos-rel">
-        <div class="left" data-states-for="radio">
-          <p class="left">
-            <label class="mt-label" for="radio1">
-              <input type="radio" name="radio" id="radio1" value="radio1" class="radio-inline" required>
-              男性</label>
-              
-          </p>
-          <p class="float-left">
-            <label class="mt-label" for="radio2">
-              <input type="radio" name="radio" id="radio2" value="radio2" class="radio-inline" required>
-              女性</label>
-              
-          </p>
-          <div data-errors-for="radio" class=" clearfix"> <small class="form-error is-hidden"
+          <div class="left" data-states-for="radio">
+            <p class="left">
+              <label class="mt-label" for="radio1">
+                <input type="radio" name="radio" id="radio1" value="radio1" class="radio-inline" required>
+                男性</label>
+            </p>
+            <p class="float-left">
+              <label class="mt-label" for="radio2">
+                <input type="radio" name="radio" id="radio2" value="radio2" class="radio-inline" required>
+                女性</label>
+            </p>
+            <div data-errors-for="radio" class=" clearfix"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 性別を選んでください。 </small> </div>
           </div>
           <p class=" ml-pref-cell mt-minus-label" data-states-for="pref">
@@ -180,7 +175,7 @@
                  placeholder="ハイフン無し半角数字"
                  pattern="^[0-9()+\s]{8,13}$"
                  required>
-                 <div data-errors-for="tel"> <small class="form-error is-hidden"
+            <div data-errors-for="tel"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> ハイフン無し半角数字で入力してください。 </small> </div>
           </div>
           <div class="pull-right" data-states-for="email">
@@ -191,40 +186,26 @@
                  class="form-input form-addon"
                  placeholder="example@mail.com"
                  required>
-            <div data-errors-for="email">
-          <small class="form-error is-hidden"
-                 data-errors-when="valueMissing">
-            英数小文字で入力してください。
-          </small>
-          
-          <small class="form-error is-hidden"
-                 data-errors-when="typeMismatch">
-            英数小文字で入力してください。
-                      </small>
-        </div>
-        </div>
-          
+            <div data-errors-for="email"> <small class="form-error is-hidden"
+                 data-errors-when="valueMissing"> 英数小文字で入力してください。 </small> <small class="form-error is-hidden"
+                 data-errors-when="typeMismatch"> 英数小文字で入力してください。 </small> </div>
+          </div>
         </li>
       </ul>
       <h4>キャリアカウンセリングを予約する</h4>
-      <ul>
+      <ul class="mb1em">
         <li class="margin-0">
           <div class="divider2"></div>
         </li>
-        <li id="datepairExample">
+        <li id="date" class="">
           <div class="left" data-states-for="datepicker">
             <label for="datepicker">キャリアカウンセリング希望日<span class="callout callout-must">必須</span></label>
-            
-                    <input type="text" class="date start form-input form-addon" placeholder="選択してください" id="datepicker" name="datepicker"  required/>
-                    
-            
+            <input type="text" id="datepicker" name="datepicker" class="date form-input form-addon" placeholder="選択してください"   required>
+            <div class="" data-errors-for="datepicker"> <small class="form-error is-hidden"
+                 data-errors-when="valueMissing"> 希望日を選んでください。</small> </div>
           </div>
-          <div class="clearfix" data-errors-for="datepicker"> <small class="form-error is-hidden"
-                 data-errors-when="valueMissing"> 希望日を選んでください。 </small>
-          </div>
-          
-          <div class=" pull-right mt-minus-label2" data-states-for="datepicker">
-            <label for="datepicker">時間<span class="callout callout-must">必須</span></label>
+          <div class=" pull-right" data-states-for="time">
+            <label for="time">時間<span class="callout callout-must">必須</span></label>
             <select name="time"
             		class="form-input form-addon"
             		id="time"
@@ -244,15 +225,12 @@
               <option value="3s">16:30</option>
               </optgroup>
             </select>
-                   <!-- <input type="text" class="time start form-input form-addon"placeholder="選んでください" id="durationExample" name="datepicker"  required/>-->
-            			
           </div>
-          <div class="clearfix" data-errors-for="datepicker"> <small class="form-error is-hidden"
-                 data-errors-when="valueMissing"> 希望日を選んでください。 </small>
-          </div>
-          
-          
+          <div class="" data-errors-for="time"> <small class="form-error is-hidden"
+                 data-errors-when="valueMissing"> 希望時間を選んでください。 </small> </div>
         </li>
+      </ul>
+      <ul class="mb1em">
         <li>
           <label for="comments">ご希望・備考等あればお知らせください</label>
           <textarea cols="46" rows="3" name="comments"></textarea>
@@ -264,41 +242,31 @@
     </form>
   </div>
 </section>
-<script src="js/gentle_form.js"></script> 
-<script src="js/gentle_form_valid.js"></script> 
-<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/gentle_form.js"></script> 
+<script type="text/javascript" src="js/gentle_form_valid.js"></script> 
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script> 
+<script type="text/javascript" src="js/jquery.autoKana.js"></script> 
 <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
-<script src="js/bootstrap-datepicker.ja.min.js"></script>
-<script type="text/javascript" src="js/jquery.timepicker.js"></script>
-<script type="text/javascript" src="js/site.js"></script>
-<script src="http://g.0-oo.net/gcalendar-holidays.js"></script>
-
-<script>
-  $(function() {
-    $.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
-    $( "#datepicker" ).datepicker();
-  });
-  $('#datepairExample .date').datepicker({
-                    'format': 'm月d日',
+<script type="text/javascript">//jquery.autoKana.js フリガナ入力支援
+    $(document).ready(
+        function() {               
+            $.fn.autoKana('#family_name_kanji', '#family_name_kana', {
+                katakana : true  //true：カタカナ、false：ひらがな（デフォルト）
+        });
+		
+    });
+	$(document).ready(
+	function() {               
+            $.fn.autoKana('#first_name_kanji', '#first_name_kana', {
+                katakana : true  //true：カタカナ、false：ひらがな（デフォルト）
+        });
+	});
+</script> 
+<script type="text/javascript">//datepicker.js
+                $('#date .date').datepicker({
+                    'format': 'yyyy/m/d',
                     'autoclose': true
                 });
-  </script>
- <script>
-                $('#datepairExample .time').timepicker({
-                    'showDuration': true,
-                    'timeFormat': 'g:ia'
-                });
-
-                $('#datepairExample .date').datepicker({
-                    'format': 'm月d日',
-                    'autoclose': true
-                });
-
-				$('#durationExample').timepicker({
-    'minTime': '11:00am',
-    'maxTime': '7:00pm'
-});
             </script>
-
 </body>
 </html>

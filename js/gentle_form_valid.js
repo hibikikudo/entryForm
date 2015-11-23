@@ -7,7 +7,7 @@ new GentleForm('form', function (event, isValid, data) {
   event.preventDefault();
   
   if (isValid) toast('ご登録ありがとうございます！', 'success');
-  else toast('ごめんなさい、未入力の項目があるようです。', 'error');
+  else toast('ごめんなさい、未入力の項目があったようです。', 'error');
   
   console.log(event, isValid, data);
 });
@@ -37,5 +37,5 @@ function toast (msg, type) {
         toaster.style.display = 'none';
       }, 300);
     }, 5000);
-  }, 10);
+  }, 7);
 }

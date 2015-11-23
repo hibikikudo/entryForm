@@ -17,6 +17,14 @@ body {
 	margin-bottom:1em;
 	}
 
+#entry-form ul.l-height62{
+	height:62px;}
+
+#entry-form .float-none{
+	overflow: hidden; /*floatの解除、ここがポイント*/
+    position: relative;
+}
+
 #entry-form div,#entry-form  textarea,#entry-form  input {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -380,6 +388,35 @@ body {
 }
 .form-addon.is-invalid .form-addon__addon:before {
   border-color: #f989ab;
+}
+
+#entry-form .toaster {
+  position: fixed;
+  z-index: 1;
+  top: 10px;
+  right: 10px;
+  padding: 20px;
+  color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  -webkit-transform: translateY(-10px) rotateY(40deg);
+          transform: translateY(-10px) rotateY(40deg);
+  -webkit-transition: all 300ms ease;
+          transition: all 300ms ease;
+}
+#entry-form .toaster.toaster--show {
+  -webkit-transform: translateY(0) rotateY(0);
+          transform: translateY(0) rotateY(0);
+  opacity: 1;
+}
+
+#entry-form .toaster--success {
+  background-color: #31d47d;
+}
+
+#entry-form .toaster--error {
+  background-color: #00a7ea;
 }
 
 /*
