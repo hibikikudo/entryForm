@@ -8,7 +8,7 @@ body {
     font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro W3",メイリオ,Meiryo,"ＭＳ Ｐゴシック",sans-serif;
 	}
 /*----------------
-Helper
+Layout / Helper
 ------------------*/
 #entry-form .is-hidden {
   display: none;
@@ -49,8 +49,28 @@ Helper
 	
 #entry-form .pos-rel{
 	position:relative;}
+	
+#entry-form .div-center{
+	display:block;
+	text-align:center;
+}
+
+#entry-form .div-center button{
+	margin:0 auto;
+}
+#entry-form .mb5{
+	margin-bottom:5px;
+	}
+
+#entry-form .mb9{
+	margin-bottom:9px;
+	}
+	
+#entry-form .ml-pref-cell{
+	margin-left:77px;
+}
 /*----------------
-End Helper
+End Layout / Helper
 ------------------*/
 
 #entry-form div,#entry-form  textarea,#entry-form  input {
@@ -76,13 +96,15 @@ End Helper
 #entry-form .row.header {
   padding: 1.5em 2.5em;
   border-bottom: 1px solid #ccc;
-  background: url(../img/Perfect_iOS_7_Style_Blur_Background.jpg);
+  background: url(../img/background01.jpg);
   color: #fff;
 }
 #entry-form .row.body {
   padding: .5em 2.5em 1em;
 }
-
+/*----------------
+Headings
+------------------*/
 #entry-form h1 {
   display: inline-block;
   font-size: 2.8125em;
@@ -101,12 +123,10 @@ End Helper
 #entry-form h4 {
 	font-size:1.3em;
 	font-weight:normal;
-/*    border-left: 3px #00a7ea solid;
-    padding:0 0.5em;*/
     color:#666666;
 	margin:0;
 	}
-	
+
 #entry-form legend {
 	margin: 0 0 0.5em 0;
     color: #006993;
@@ -114,7 +134,9 @@ End Helper
 	font-weight:normal;
 	width:46%;
 	}
-
+/*----------------
+Button
+------------------*/
 #entry-form .btn {
   font-size: 1.0625em;
   display: inline-block;
@@ -141,6 +163,10 @@ End Helper
   background-color: #ff8932;
 }
 
+/*----------------
+form
+------------------*/
+
 #entry-form form {
   max-width: 100%;
   display: block;
@@ -165,7 +191,6 @@ End Helper
   margin: 0;
   padding: 0;
   float: left;
-  
 }
 
 #entry-form form ul li .grid-220{
@@ -260,24 +285,6 @@ End Helper
   margin: 0 0 0.5em 0;
 }
 
-#entry-form .div-center{
-	display:block;
-	text-align:center;
-}
-
-#entry-form .div-center button{
-	margin:0 auto;
-}
-#entry-form .mb5{
-	margin-bottom:5px;}
-
-#entry-form .mb9{
-	margin-bottom:9px;}
-	
-#entry-form .ml-pref-cell{
-	margin-left:77px;
-
-}
 #entry-form .ml-pref-valid{
 	position:absolute;
 	right:76px;
