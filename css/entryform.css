@@ -7,7 +7,14 @@ body {
     letter-spacing: 0.2px;
     font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro W3",メイリオ,Meiryo,"ＭＳ Ｐゴシック",sans-serif;
 	}
-.clearfix{
+/*----------------
+Helper
+------------------*/
+#entry-form .is-hidden {
+  display: none;
+}
+
+#entry-form .clearfix{
 	clear:both;}
 #entry-form fieldset{
 	border:none;
@@ -23,13 +30,28 @@ body {
 	margin-bottom:1em;
 	}
 
-#entry-form ul.l-height62{
-	height:62px;}
-
 #entry-form .float-none{
 	overflow: hidden; /*floatの解除、ここがポイント*/
     position: relative;
 }
+
+#entry-form .pull-right {
+  float: right;
+}
+
+#entry-form form .mt-minus-label{
+	margin-top:-1.8em;
+	}
+	
+#entry-form form .mt-minus-label2{
+	margin-top:-5.1em;
+	}
+	
+#entry-form .pos-rel{
+	position:relative;}
+/*----------------
+End Helper
+------------------*/
 
 #entry-form div,#entry-form  textarea,#entry-form  input {
   -moz-box-sizing: border-box;
@@ -37,7 +59,7 @@ body {
   box-sizing: border-box;
 }
  
-.entry-form-container {
+#entry-form .entry-form-container {
   max-width: 542px;
   min-width: 324px;
   margin: 50px auto 0px;
@@ -59,10 +81,6 @@ body {
 }
 #entry-form .row.body {
   padding: .5em 2.5em 1em;
-}
-
-#entry-form .pull-right {
-  float: right;
 }
 
 #entry-form h1 {
@@ -95,13 +113,6 @@ body {
     font-size: 1em;
 	font-weight:normal;
 	width:46%;
-	}
-
-#entry-form form .mt-minus-label{
-	margin-top:-1.8em;
-	}
-#entry-form form .mt-minus-label2{
-	margin-top:-5.1em;
 	}
 
 #entry-form .btn {
@@ -277,8 +288,6 @@ body {
 	right:76px;
 	top:60px;
 }
-.pos-rel{
-	position:relative;}
 	
 #entry-form form input[type="radio"],#entry-form form input[type="checkbox"] {
   margin-top: 1px \9;
@@ -341,28 +350,27 @@ body {
 /*---------------------------------------------*\
     GentleForm related styles
 \*---------------------------------------------*/
-.form-addon {
+#entry-form .form-addon {
   position: relative;
   display: table;
-  width: 100%;
   border: 1px solid #d1d1d1;
   background-color: #fff;
   border-radius: 2px;
 }
-.form-addon .form-input,
-.form-addon .form-addon__addon {
+#entry-form .form-addon .form-input,
+#entry-form .form-addon .form-addon__addon {
   display: table-cell;
   vertical-align: middle;
 }
-.form-addon .form-input {
+#entry-form .form-addon .form-input {
   width: 100%;
 }
-.form-addon .form-addon__addon {
+#entry-form .form-addon .form-addon__addon {
   position: relative;
   width: 40px;
   text-align: center;
 }
-.form-addon .form-addon__addon:before {
+#entry-form .form-addon .form-addon__addon:before {
   content: "";
   position: absolute;
   top: 4px;
@@ -371,11 +379,7 @@ body {
   border-right: 1px solid #bcdae5;
 }
 
-.is-hidden {
-  display: none;
-}
-
-.form-addon .form-addon__icon {
+#entry-form .form-addon .form-addon__icon {
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
@@ -383,20 +387,21 @@ body {
   -webkit-transition: -webkit-transform 150ms ease, opacity 150ms ease;
           transition: transform 150ms ease, opacity 150ms ease;
 }
-.form-addon.is-valid [class*="icon-valid"], .form-addon.is-invalid [class*="icon-invalid"] {
+#entry-form .form-addon.is-valid [class*="icon-valid"], 
+#entry-form .form-addon.is-invalid [class*="icon-invalid"] {
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   opacity: 1;
 }
-.form-addon.is-invalid {
+#entry-form .form-addon.is-invalid {
   background-color: #fef4f7;
   border-color: #f989ab;
 }
-.form-addon.is-invalid .form-addon__icon {
+#entry-form .form-addon.is-invalid .form-addon__icon {
   color: #f42866;
 }
-.form-addon.is-invalid .form-addon__addon:before {
+#entry-form .form-addon.is-invalid .form-addon__addon:before {
   border-color: #f989ab;
 }
 
@@ -427,52 +432,4 @@ body {
 
 #entry-form .toaster--error {
   background-color: #ff6666;
-}
-
-
-
-@media only screen and (max-width: 768px) {
-#entry-form .pull-right {
-    float: none;
-  }
-
-#entry-form input {
-    width: 100%;
-  }
-
-#entry-form label {
-    width: 100%;
-    display: inline-block;
-    float: left;
-    clear: both;
-  }
-
-#entry-form li, p {
-    width: 100%;
-  }
-
-#entry-form input.btn {
-    margin: 1.5em 0 0.5em;
-  }
-
-#entry-form h1 {
-    font-size: 2.25em;
-  }
-
-#entry-form h3 {
-    font-size: 1.125em;
-  }
-
-#entry-form li small {
-    display: none;
-  }
-#entry-form form .mt-label {
-	display:inline-block;
-	margin-left:0;
-	float:left;
-	}
-#entry-form form select{
-	padding:0 5px;
-	width: 220px;
-	}
 }
