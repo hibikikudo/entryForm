@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>登録予約フォーム</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/entryform.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.css" />
 </head>
 
 <body id="entry-form">
-<div class="toaster" style="display: none;"> Yay, the form is valid! </div>
+<div class="toaster" style="display: none;">Yay, the form is valid!</div>
 <section class="entry-form-container">
   <div class="row header">
     <h1>登録予約フォーム</h1>
@@ -19,15 +18,10 @@
   </div>
   <div class="row body">
     <form name="signup" class="form" novalidate>
-      <h4>基本情報をご入力ください</h4>
-      <ul>
-        <li>
-          <div class="divider2"></div>
-        </li>
-      </ul>
+      <h4 class="mb1em">基本情報をご入力ください</h4>
       <ul class="mb1em">
         <fieldset>
-        <legend class="is-hidden">お名前</legend>
+          <legend class="is-hidden">お名前</legend>
           <li>
             <div class="left" data-states-for="family_name_kanji">
               <label for="family_name_kanji" >姓 <span class="callout callout-must">必須</span></label>
@@ -78,7 +72,7 @@
           </li>
         </fieldset>
         <fieldset>
-        <legend>性別<span class="callout callout-must">必須</span></legend>
+          <legend>性別<span class="callout callout-must">必須</span></legend>
           <li class="pos-rel">
             <div class="left" data-states-for="radio">
               <div class="left mb5">
@@ -94,9 +88,7 @@
               <div data-errors-for="radio" class=" clearfix"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 性別を選んでください。 </small> </div>
             </div>
-            
-            
-            <div class=" pull-right mt-minus-label" data-states-for="pref">
+            <div class=" pull-right mt-minus-label pos-rel mb5" data-states-for="pref">
               <label for="pref">お住まい<span class="callout callout-must">必須</span></label>
               <select name="pref"
             		class="form-input form-addon"
@@ -171,16 +163,16 @@
             <div data-errors-for="pref" class="ml-pref-valid"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> お住まいを選んでください。 </small> </div>
           </li>
-          </fieldset>
-          <fieldset>
-            <legend class="is-hidden">個人情報</legend>
+        </fieldset>
+        <fieldset>
+          <legend class="is-hidden">個人情報</legend>
           <li>
             <div class="left grid-220 mb9" data-states-for="tel">
               <label for="tell">電話番号<span class="callout callout-must">必須</span></label>
               <input type="tel"
                  id="tel"
                  name="tel"
-                 class="form-input form-addon"
+                 class="form-input form-addon js-characters-change"
                  placeholder="ハイフン無し半角数字"
                  pattern="^[0-9()+\s]{8,13}$"
                  required>
@@ -192,7 +184,7 @@
               <input type="email"
                  id="email"
                  name="email"
-                 class="form-input form-addon"
+                 class="form-input form-addon js-characters-change"
                  placeholder="example@mail.com"
                  required>
               <div data-errors-for="email"> <small class="form-error is-hidden"
@@ -205,11 +197,11 @@
       <h4>キャリアカウンセリングを予約する</h4>
       <ul class="mb1em">
         <fieldset>
-        <legend class="is-hidden">希望日時</legend>
+          <legend class="is-hidden">希望日時</legend>
           <li class="margin-0">
             <div class="divider2"></div>
           </li>
-          <li id="date" class=" pos-rel">
+          <li id="js-date" class=" pos-rel">
             <div class="left" data-states-for="datepicker">
               <label for="datepicker">キャリアカウンセリング希望日<span class="callout callout-must">必須</span></label>
               <input type="text" id="datepicker" name="datepicker" class="date form-input form-addon" placeholder="選択してください"   required>
@@ -245,7 +237,7 @@
       </ul>
       <ul class="mb1em">
         <fieldset>
-         <legend class="is-hidden">ご希望</legend>
+          <legend class="is-hidden">ご希望</legend>
           <li>
             <label for="comments">ご希望・備考等あればお知らせください</label>
             <textarea cols="46" rows="3" name="comments"></textarea>
@@ -277,12 +269,29 @@
                 katakana : true  //true：カタカナ、false：ひらがな（デフォルト）
         });
 	});
-</script> 
+</script>
+<script type="text/javascript">//メアド、電話の全角文字を半角に自動変換するやーつ
+$(function(){
+    $(".js-characters-change").blur(function(){
+        charactersChange($(this));
+    });
+
+
+    charactersChange = function(ele){
+        var val = ele.val();
+        var han = val.replace(/[Ａ-Ｚａ-ｚ０-９]/g,function(s){return String.fromCharCode(s.charCodeAt(0)-0xFEE0)});
+
+        if(val.match(/[Ａ-Ｚａ-ｚ０-９]/g)){
+            $(ele).val(han);
+        }
+    }
+}); 
+</script>
 <script type="text/javascript">//bootstrap-datepicker.js
-                $('#date .date').datepicker({
+                $('#js-date .date').datepicker({
                     'format': 'yyyy/m/d',
                     'autoclose': true
                 });
-            </script>
+</script>
 </body>
 </html>
