@@ -183,7 +183,7 @@
                  value=""
                  required>
               <div data-errors-for="tel"> <small class="form-error is-hidden"
-                 data-errors-when="valueMissing"> ハイフン無し半角数字で入力してください。 </small> </div>
+                 data-errors-when="valueMissing"> ハイフン無しで入力してください。 </small> </div>
             </div>
             <div class="pull-right" data-states-for="email">
               <label for="email">email<span class="callout callout-must">必須</span></label>
@@ -211,18 +211,17 @@
           </li>
           <li id="js-date" class=" pos-rel">
             <div class="left" data-states-for="datepicker">
-              <label for="datepicker">キャリアカウンセリング希望日<span class="callout callout-must">必須</span></label>
-              <input type="text" id="datepicker" name="datepicker" class="date form-input form-addon" placeholder="選択してください" value="選択してください" required>
+              <label for="datepicker">キャリアカウンセリング希望日</label>
+              <input type="text" id="datepicker" name="datepicker" class="date form-input form-addon" placeholder="選択してください" value="選択してください">
               <div data-errors-for="datepicker"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 希望日を選んでください。</small> </div>
             </div>
             <div class=" pull-right" data-states-for="time">
-              <label for="time">時間<span class="callout callout-must">必須</span></label>
+              <label for="time">時間</label>
               <select name="time"
             		class="form-input form-addon"
             		id="time"
-                    tabindex="2"
-                    required="required">
+                    tabindex="2">
                 <option value="" selected disabled>選択してください</option>
                 <optgroup label="平日">
                 <option value="1">11:00</option>

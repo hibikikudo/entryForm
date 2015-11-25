@@ -129,7 +129,7 @@ h3, h4 {
 	margin:0;
 	}
 
-legend i{
+legend, i{
 	margin: 0 0 0.5em 0;
     color: #006993;
     font-size: 1em;
@@ -395,21 +395,21 @@ form .radio-inline{
   -webkit-transition: -webkit-transform 150ms ease, opacity 150ms ease;
           transition: transform 150ms ease, opacity 150ms ease;
 }
-#entry-form .form-addon.is-valid [class*="icon-valid"], 
-#entry-form .form-addon.is-invalid [class*="icon-invalid"] {
+.form-addon.is-valid [class*="icon-valid"], 
+.form-addon.is-invalid [class*="icon-invalid"] {
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   opacity: 1;
 }
-#entry-form .form-addon.is-invalid {
+.form-addon.is-invalid {
   background-color: #fef4f7;
   border-color: #f989ab;
 }
-#entry-form .form-addon.is-invalid .form-addon__icon {
+.form-addon.is-invalid .form-addon__icon {
   color: #f42866;
 }
-#entry-form .form-addon.is-invalid .form-addon__addon:before {
+.form-addon.is-invalid .form-addon__addon:before {
   border-color: #f989ab;
 }
 
