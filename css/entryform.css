@@ -10,102 +10,104 @@ body {
 /*----------------
 Layout / Helper
 ------------------*/
-#entry-form .is-hidden {
+.is-hidden {
   display: none;
 }
 
-#entry-form .clearfix{
+.clearfix{
 	clear:both;}
-#entry-form fieldset{
+fieldset{
 	border:none;
 	margin:0;
 	padding:0;
 	}
 	
-#entry-form .is-boxShadow {
-  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.12);
+.is-boxShadow {
+	-webkit-box-shadow:rgba(113, 135, 164, 0.65098) 1px 1px 1px 1px;
+	-moz-box-shadow:rgba(113, 135, 164, 0.65098) 1px 1px 1px 1px;
+	box-shadow:rgba(113, 135, 164, 0.65098) 1px 1px 1px 1px;
 }
 
-#entry-form .mb1em{
+.mb1em{
 	margin-bottom:1em;
 	}
 
-#entry-form .float-none{
+.float-none{
 	overflow: hidden; /*floatの解除、ここがポイント*/
     position: relative;
 }
 
-#entry-form .pull-right {
+.pull-right {
   float: right;
 }
 
-#entry-form form .mt-minus-label{
+form .mt-minus-label{
 	margin-top:-1.8em;
 	}
 	
-#entry-form form .mt-minus-label2{
+form .mt-minus-label2{
 	margin-top:-5.1em;
 	}
 	
-#entry-form .pos-rel{
+.pos-rel{
 	position:relative;}
 	
-#entry-form .div-center{
+.div-center{
 	display:block;
 	text-align:center;
 }
 
-#entry-form .div-center button{
+.div-center button{
 	margin:0 auto;
 }
-#entry-form .mb5{
+.mb5{
 	margin-bottom:5px;
 	}
 
-#entry-form .mb9{
+.mb9{
 	margin-bottom:9px;
 	}
 	
-#entry-form .ml-pref-cell{
+.ml-pref-cell{
 	margin-left:77px;
 }
 /*----------------
 End Layout / Helper
 ------------------*/
 
-#entry-form div,#entry-form  textarea,#entry-form  input {
+div,textarea,input {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
  
-#entry-form .entry-form-container {
+.entry-form-container {
   max-width: 542px;
   min-width: 324px;
-  margin: 50px auto 0px;
+  margin: 50px auto 0;
   background-color: #fff;
   border: 1px solid #cfcfcf;
   position:relative;
 }
 
-#entry-form .row {
+.row {
   width: 100%;
   margin: 0 0 1em 0;
   padding: 0 2.5em;
 }
-#entry-form .row.header {
+.header {
   padding: 1.5em 2.5em;
   border-bottom: 1px solid #ccc;
   background: url(../img/background01.jpg);
   color: #fff;
 }
-#entry-form .row.body {
+.row .body {
   padding: .5em 2.5em 1em;
 }
 /*----------------
 Headings
 ------------------*/
-#entry-form h1 {
+h1 {
   display: inline-block;
   font-size: 2.8125em;
   font-weight: 400;
@@ -114,30 +116,31 @@ Headings
   padding: 0 0 0.4em 0;
 }
 
-#entry-form h3 {
+h2 {
   font-weight: 400;
   font-size: 1em;
   margin: 1em 0 0 0;
 }
 
-#entry-form h4 {
+h3, h4 {
 	font-size:1.3em;
 	font-weight:normal;
     color:#666666;
 	margin:0;
 	}
 
-#entry-form legend {
+legend i{
 	margin: 0 0 0.5em 0;
     color: #006993;
     font-size: 1em;
 	font-weight:normal;
 	width:46%;
 	}
+
 /*----------------
 Button
 ------------------*/
-#entry-form .btn {
+.btn {
   font-size: 1.0625em;
   display: inline-block;
   padding: 0.35em 1.5em 0.25em 1.5em;
@@ -152,14 +155,14 @@ Button
 	border-radius:20px;
 	
 }
-#entry-form .btn:hover {
+.btn:hover {
   background-color: #bfbfbf;
 }
-#entry-form .btn.btn-submit {
+.btn-submit {
   background-color: #ff6c00;
   font-size:1.5em;
 }
-#entry-form .btn.btn-submit:hover {
+.btn-submit:hover {
   background-color: #ff8932;
 }
 
@@ -167,46 +170,46 @@ Button
 form
 ------------------*/
 
-#entry-form form {
+form {
   max-width: 100%;
   display: block;
 }
-#entry-form form ul {
+form ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-#entry-form form ul li {
+form ul li {
   margin: 0 0 0.25em 0;
   clear: both;
   display: inline-block;
   width: 100%;
 }
 
-#entry-form form ul li:last-child, #entry-form form ul .margin-0 {
+form ul li:last-child, form ul .margin-0 {
   margin: 0;
 }
-#entry-form form ul li p,
-#entry-form form ul li div {
+form ul li p,
+form ul li div {
   margin: 0;
   padding: 0;
   float: left;
 }
 
-#entry-form form ul li .grid-220{
+form ul li .grid-220{
 	width:220px;
 	}
 
-#entry-form form ul li p.right {
+p.right {
   float: right;
 }
 
-#entry-form form ul li p.float-left {
+p.float-left {
   float: left;
   margin-left:2em;
 }
 
-#entry-form form ul li .divider {
+form ul li .divider {
   margin: 0.5em 0 0.5em 0;
   border: 0;
   height: 1px;
@@ -216,7 +219,7 @@ form
   background-image: linear-gradient(to right, #00a7ea, #4f6fad);
 }
 
-#entry-form form ul li .divider2 {
+form ul li .divider2 {
   margin: 0 0 1em 0;
   border: 0;
   height: 1px;
@@ -226,44 +229,44 @@ form
   background-image: linear-gradient(to right, #00a7ea, #4f6fad);
 }
 
-#entry-form form ul li .req {
+form ul li .req {
   color: #ee9cb4;
 }
 
-#entry-form form label {
+form label {
   display: block;
   margin: 0 0 0.5em 0;
   color: #006993;
   font-size: 1em;
 }
 
-#entry-form form .mt-label{
+form .mt-label{
 	margin-top:0.8em;
 	color:#555;
 	width:80px;
 	}
 
-#entry-form form input {
+form input {
   margin: 0 0 0.5em 0;
   padding: 6px 10px;
   color: #555;
-  font-size: 1em;
   width:220px;
 }
-#entry-form form textarea {
+form textarea {
   border: 1px solid #ccc;
   padding: 6px 10px;
   width: 100%;
-  color: #555;
-  resize: vertical;  
+  resize: vertical;
     overflow: auto;
+	color: #999;/*説明の装飾;*/
 }
-#entry-form form small {
+form textarea.nodes {color: #555;}/*通常の装飾;*/
+form small {
   color: #ff6666;
   margin: 0 0 0 1em;
 }
 
-#entry-form form .form-control {
+form .form-control {
   display: block;
   width: 100%;
   padding: 6px 12px;
@@ -274,7 +277,7 @@ form
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
-#entry-form form select {
+form select {
   background-image: none;
   display: inline-block;
   height: 32px;
@@ -285,42 +288,42 @@ form
   margin: 0 0 0.5em 0;
 }
 
-#entry-form .ml-pref-valid{
+.ml-pref-valid{
 	position:absolute;
 	right:76px;
 	top:35px;
 }
-#entry-form .ml-time-valid{
+.ml-time-valid{
 	position:absolute;
 	right:76px;
 	top:60px;
 }
 	
-#entry-form form input[type="radio"],#entry-form form input[type="checkbox"] {
+form input[type="radio"],form input[type="checkbox"] {
   margin-top: 1px \9;
   line-height:normal;
   vertical-align:middle;
 }
-#entry-form form input .radio,#entry-form form input.checkbox {
+form input .radio,form input.checkbox {
   position: relative;
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-#entry-form form input .radio label,#entry-form form input .checkbox label {
+form input .radio label,form input .checkbox label {
   min-height: 20px;
   margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
 }
-#entry-form form input .radio input[type="radio"],#entry-form form input .radio-inline input[type="radio"], #entry-form form input .checkbox input[type="checkbox"],#entry-form form input .checkbox-inline input[type="checkbox"] {
+form input .radio input[type="radio"],form input .radio-inline input[type="radio"], form input .checkbox input[type="checkbox"],form input .checkbox-inline input[type="checkbox"] {
   position: absolute;
   margin-top: 4px \9;
   margin-left: -20px;
   top:4px;
 }
 
-#entry-form form .radio-inline,#entry-form form .checkbox-inline {
+form .radio-inline,form .checkbox-inline {
   display: inline-block;
   padding:0 10px;
   margin-bottom: 0;
@@ -329,55 +332,53 @@ form
   cursor: pointer;
 }
 
-#entry-form form .radio-inline{
+form .radio-inline{
 	width:1rem;
-	display:inline;
 	float:left;
 	 top:6px;
 	 margin-top: 1px;
 	}
 
-.callout, #entry-form form .callout {
+.callout, form .callout {
   text-align: center;
   text-decoration: none;
   font-weight: normal;
-  font-size:10px;
+  font-size:0.8em;
   padding:1px;
 }
 
-.callout-must, #entry-form form .callout-must {
+.callout-must, form .callout-must {
     color: #ff6666;
     border-radius: 2px;
     border: 1px solid #ff6666;
     margin: 0 0 0 4px;
     padding: 0 2px;
-    font-size: 10px;
 	float:right;
 }
 /*---------------------------------------------*\
     GentleForm related styles
 \*---------------------------------------------*/
-#entry-form .form-addon {
+.form-addon {
   position: relative;
   display: table;
   border: 1px solid #d1d1d1;
   background-color: #fff;
   border-radius: 2px;
 }
-#entry-form .form-addon .form-input,
-#entry-form .form-addon .form-addon__addon {
+.form-addon .form-input,
+.form-addon .form-addon__addon {
   display: table-cell;
   vertical-align: middle;
 }
-#entry-form .form-addon .form-input {
+.form-addon .form-input {
   width: 100%;
 }
-#entry-form .form-addon .form-addon__addon {
+.form-addon .form-addon__addon {
   position: relative;
   width: 40px;
   text-align: center;
 }
-#entry-form .form-addon .form-addon__addon:before {
+.form-addon .form-addon__addon:before {
   content: "";
   position: absolute;
   top: 4px;
@@ -386,7 +387,7 @@ form
   border-right: 1px solid #bcdae5;
 }
 
-#entry-form .form-addon .form-addon__icon {
+.form-addon .form-addon__icon {
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
@@ -412,7 +413,7 @@ form
   border-color: #f989ab;
 }
 
-#entry-form .toaster {
+.toaster {
   position: fixed;
   z-index: 1;
   top: 10px;
@@ -427,16 +428,16 @@ form
   -webkit-transition: all 300ms ease;
           transition: all 300ms ease;
 }
-#entry-form .toaster.toaster--show {
+.toaster--show {
   -webkit-transform: translateY(0) rotateY(0);
           transform: translateY(0) rotateY(0);
   opacity: 1;
 }
 
-#entry-form .toaster--success {
+.toaster--success {
   background-color: #31d47d;
 }
 
-#entry-form .toaster--error {
+.toaster--error {
   background-color: #ff6666;
 }
