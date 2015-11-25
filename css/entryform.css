@@ -52,7 +52,8 @@ form .mt-minus-label2{
 .pos-rel{
 	position:relative;}
 	
-.div-center{
+.div-center, .div-center p{
+	margin:0 auto;
 	display:block;
 	text-align:center;
 }
@@ -71,6 +72,12 @@ form .mt-minus-label2{
 .ml-pref-cell{
 	margin-left:77px;
 }
+.is-text-centering{
+	text-align:center;
+	}
+.l-w220px{
+	width:220px;
+	}
 /*----------------
 End Layout / Helper
 ------------------*/
@@ -134,9 +141,16 @@ legend, i{
     color: #006993;
     font-size: 1em;
 	font-weight:normal;
-	width:46%;
 	}
-
+b{	
+	font-size: 1.3em;
+	line-height: 1.8;
+	font-weight:normal;
+	}
+dt{
+	margin-bottom:.33em;}
+dd{
+	margin-bottom:1em;}
 /*----------------
 Button
 ------------------*/
@@ -144,7 +158,7 @@ Button
   font-size: 1.0625em;
   display: inline-block;
   padding: 0.35em 1.5em 0.25em 1.5em;
-  margin: 1.5em 0 0;
+  margin: 1rem 0 0;
   color: #fff;
   background-color: #b3b3b3;
   font-weight: 300;
@@ -339,20 +353,20 @@ form .radio-inline{
 	 margin-top: 1px;
 	}
 
-.callout, form .callout {
+.callout, form .callout, i callout{
   text-align: center;
   text-decoration: none;
   font-weight: normal;
   font-size:0.8em;
   padding:1px;
+  margin: 0 0 0 4px;
+    padding: 0 2px;
 }
 
-.callout-must, form .callout-must {
+.callout-must {
     color: #ff6666;
     border-radius: 2px;
     border: 1px solid #ff6666;
-    margin: 0 0 0 4px;
-    padding: 0 2px;
 	float:right;
 }
 /*---------------------------------------------*\
@@ -440,4 +454,31 @@ form .radio-inline{
 
 .toaster--error {
   background-color: #ff6666;
+}
+/*leanModal*/
+#lean_overlay{
+  position: fixed; z-index:100; 
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  display: none;
+}
+#privacy-policy{
+  background: none repeat scroll 0 0 #FFFFFF;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+  display: none;
+  padding: 30px;
+  width: 780px;
+ }
+.modal_close{ 
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: block; 
+  width: 14px;
+  height: 14px; 
+  background: url(../img/modal_close.png);
+  z-index: 2;
 }
