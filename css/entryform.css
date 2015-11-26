@@ -256,14 +256,14 @@ form label {
 
 form .mt-label{
 	margin-top:0.8em;
-	color:#555;
+	color:#666;
 	width:80px;
 	}
 
 form input {
   margin: 0 0 0.5em 0;
   padding: 6px 10px;
-  color: #555;
+  color: #666;
   width:220px;
 }
 form textarea {
@@ -274,9 +274,13 @@ form textarea {
     overflow: auto;
 	color: #999;/*説明の装飾;*/
 }
-form textarea.nodes {color: #555;}/*通常の装飾;*/
+form textarea.nodes {color: #666;}/*通常の装飾;*/
 form small {
   color: #ff6666;
+  margin: 0 0 0 1em;
+}
+form small.color-default {
+  color: inherit;
   margin: 0 0 0 1em;
 }
 
