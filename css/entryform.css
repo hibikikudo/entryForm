@@ -7,6 +7,12 @@ body {
     letter-spacing: 0.2px;
     font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro W3",メイリオ,Meiryo,"ＭＳ Ｐゴシック",sans-serif;
 	}
+li {
+	list-style:none;
+	}
+.li{
+	list-style: disc;
+	}
 /*----------------
 Layout / Helper
 ------------------*/
@@ -27,11 +33,15 @@ fieldset{
 	-moz-box-shadow:rgba(113, 135, 164, 0.65098) 1px 1px 1px 1px;
 	box-shadow:rgba(113, 135, 164, 0.65098) 1px 1px 1px 1px;
 }
-
+.mb0{
+	margin-bottom:0;
+	}
 .mb1em{
 	margin-bottom:1em;
 	}
-
+.mb2em{
+	margin-bottom:2em;
+	}
 .float-none{
 	overflow: hidden; /*floatの解除、ここがポイント*/
     position: relative;
@@ -52,7 +62,7 @@ form .mt-minus-label2{
 .pos-rel{
 	position:relative;}
 	
-.div-center, .div-center p{
+.div-center, .div-center p, .div-center li{
 	margin:0 auto;
 	display:block;
 	text-align:center;
@@ -68,16 +78,30 @@ form .mt-minus-label2{
 .mb9{
 	margin-bottom:9px;
 	}
-	
+.ml-btns{
+	margin-left:74px;
+}
 .ml-pref-cell{
 	margin-left:77px;
 }
 .is-text-centering{
 	text-align:center;
 	}
+.l-dt{
+	width:140px;
+	color: #006993;
+	}
 .l-w220px{
 	width:220px;
 	}
+.l-remarks{
+	width:300px;}
+.l-btns{
+	width:140px;
+	}
+.l-float-left {
+  float: left;
+}
 /*----------------
 End Layout / Helper
 ------------------*/
@@ -107,10 +131,18 @@ div,textarea,input {
   border-bottom: 1px solid #ccc;
   background: url(../img/background01.jpg);
   color: #fff;
+  margin-bottom:1.3em;
 }
 .row .body {
   padding: .5em 2.5em 1em;
 }
+.complete-massage-inner{
+	margin:6em 3em;
+	text-align:center;
+	}
+.confirm-message-inner{
+	padding:0 2.5em 1em 2.5em;
+	}
 /*----------------
 Headings
 ------------------*/
@@ -118,6 +150,7 @@ h1 {
   display: inline-block;
   font-size: 2.8125em;
   font-weight: 400;
+  border-bottom: 1px solid rgb(255, 255, 255); /* ie Fallback */
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   margin: 0 0 0.1em 0;
   padding: 0 0 0.4em 0;
@@ -139,7 +172,6 @@ h3, h4 {
 legend, i{
 	margin: 0 0 0.5em 0;
     color: #006993;
-    font-size: 1em;
 	font-weight:normal;
 	}
 b{	
@@ -155,7 +187,6 @@ dd{
 Button
 ------------------*/
 .btn {
-  font-size: 1.0625em;
   display: inline-block;
   padding: 0.35em 1.5em 0.25em 1.5em;
   margin: 1rem 0 0;
@@ -179,7 +210,9 @@ Button
 .btn-submit:hover {
   background-color: #ff8932;
 }
-
+.btn-back {
+  font-size:1.5em;
+}
 /*----------------
 form
 ------------------*/
@@ -210,20 +243,7 @@ form ul li div {
   float: left;
 }
 
-form ul li .grid-220{
-	width:220px;
-	}
-
-p.right {
-  float: right;
-}
-
-p.float-left {
-  float: left;
-  margin-left:2em;
-}
-
-form ul li .divider {
+.divider {
   margin: 0.5em 0 0.5em 0;
   border: 0;
   height: 1px;
@@ -233,8 +253,7 @@ form ul li .divider {
   background-image: linear-gradient(to right, #00a7ea, #4f6fad);
 }
 
-form ul li .divider2 {
-  margin: 0 0 1em 0;
+.divider2 {
   border: 0;
   height: 1px;
   width: 100%;
@@ -251,7 +270,6 @@ form label {
   display: block;
   margin: 0 0 0.5em 0;
   color: #006993;
-  font-size: 1em;
 }
 
 form .mt-label{
@@ -274,12 +292,12 @@ form textarea {
     overflow: auto;
 	color: #999;/*説明の装飾;*/
 }
-form textarea.nodes {color: #666;}/*通常の装飾;*/
+form textarea.nodes {color: inherit;}/*通常の装飾;*/
 form small {
   color: #ff6666;
   margin: 0 0 0 1em;
 }
-form small.color-default {
+.color-default {
   color: inherit;
   margin: 0 0 0 1em;
 }
@@ -288,7 +306,6 @@ form .form-control {
   display: block;
   width: 100%;
   padding: 6px 12px;
-  font-size: 14px;
   line-height: 1.42857143;
   background-color: #fff;
   background-image: none;
@@ -318,7 +335,6 @@ form select {
 }
 	
 form input[type="radio"],form input[type="checkbox"] {
-  margin-top: 1px \9;
   line-height:normal;
   vertical-align:middle;
 }
@@ -336,7 +352,6 @@ form input .radio label,form input .checkbox label {
 }
 form input .radio input[type="radio"],form input .radio-inline input[type="radio"], form input .checkbox input[type="checkbox"],form input .checkbox-inline input[type="checkbox"] {
   position: absolute;
-  margin-top: 4px \9;
   margin-left: -20px;
   top:4px;
 }
@@ -362,9 +377,8 @@ form .radio-inline{
   text-decoration: none;
   font-weight: normal;
   font-size:0.8em;
-  padding:1px;
   margin: 0 0 0 4px;
-    padding: 0 2px;
+  padding: 0 2px;
 }
 
 .callout-must {
@@ -408,15 +422,21 @@ form .radio-inline{
 .form-addon .form-addon__icon {
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
+	  -moz-transform: translateY(0);
+	  -o-transform: translateY(0);
           transform: translateY(0);
   opacity: 0;
   -webkit-transition: -webkit-transform 150ms ease, opacity 150ms ease;
+  -moz-transition: -webkit-transform 150ms ease, opacity 150ms ease;
+  -o-transition: -webkit-transform 150ms ease, opacity 150ms ease;
           transition: transform 150ms ease, opacity 150ms ease;
 }
 .form-addon.is-valid [class*="icon-valid"], 
 .form-addon.is-invalid [class*="icon-invalid"] {
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
+	  -o-transform: translateY(-50%);
+	  -moz-transform: translateY(-50%);
           transform: translateY(-50%);
   opacity: 1;
 }
@@ -441,13 +461,21 @@ form .radio-inline{
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   opacity: 0;
+  -ms-transform: translateY(-10px) rotateY(40deg);
   -webkit-transform: translateY(-10px) rotateY(40deg);
+  -moz-transform:translateY(-10px) rotateY(40deg);
+  -o-transform: translateY(-10px) rotateY(40deg);
           transform: translateY(-10px) rotateY(40deg);
   -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+   -o-transition: all 300ms ease;
           transition: all 300ms ease;
 }
 .toaster--show {
   -webkit-transform: translateY(0) rotateY(0);
+  -moz-transform: translateY(0) rotateY(0);
+  -o-transform: translateY(0) rotateY(0);
+  -ms-transform: translateY(0) rotateY(0);
           transform: translateY(0) rotateY(0);
   opacity: 1;
 }
@@ -462,8 +490,8 @@ form .radio-inline{
 /*leanModal*/
 #lean_overlay{
   position: fixed; z-index:100; 
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   background: #000;
@@ -473,16 +501,8 @@ form .radio-inline{
   background: none repeat scroll 0 0 #FFFFFF;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
   display: none;
-  padding: 30px;
   width: 780px;
  }
-.modal_close{ 
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  display: block; 
-  width: 14px;
-  height: 14px; 
-  background: url(../img/modal_close.png);
-  z-index: 2;
-}
+.privacy-policy-inner{
+	padding: 30px;
+	}

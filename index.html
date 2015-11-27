@@ -13,7 +13,7 @@
 <section class="entry-form-container">
   <div class="row header">
     <h1>登録予約フォーム</h1>
-    <h2>ご入力頂けましたら、追って弊社よりご連絡差し上げます。<br>
+    <h2>ご入力いただけましたら、追って弊社よりご連絡差し上げます。<br>
       ご登録についてご不明点がある場合もお気軽にお問い合わせ下さい。</h2>
   </div>
   <div class="row body">
@@ -22,10 +22,10 @@
         <h3>基本情報をご入力ください</h3>
         <ul class="mb5">
           <li class="margin-0">
-            <div class="divider2"></div>
+            <div class="divider2 mb1em"></div>
           </li>
           <li>
-            <div class="left" data-states-for="family_name_kanji">
+            <div class="l-float-left" data-states-for="family_name_kanji">
               <label for="family_name_kanji" >姓 <span class="callout callout-must">必須</span></label>
               <input type="text"
                  id="family_name_kanji"
@@ -51,7 +51,7 @@
             </div>
           </li>
           <li>
-            <div class="left" data-states-for="family_name_kana">
+            <div class="l-float-left" data-states-for="family_name_kana">
               <label for="family_name_kana" >姓 (フリガナ) <span class="callout callout-must">必須</span></label>
               <input type="text"
                  id="family_name_kana"
@@ -80,13 +80,13 @@
         <div class="l-w220px"> <i>性別<span class="callout callout-must">必須</span></i> </div>
         <ul>
           <li class="pos-rel">
-            <div class="left" data-states-for="radio">
-              <div class="left mb5">
+            <div class="l-float-left" data-states-for="radio">
+              <div class="l-float-left mb5">
                 <label class="mt-label" for="radio1">
                   <input type="radio" name="radio" id="radio1" value="radio1" class="radio-inline" required>
                   男性</label>
               </div>
-              <div class="float-left">
+              <div class="l-float-left">
                 <label class="mt-label" for="radio2">
                   <input type="radio" name="radio" id="radio2" value="radio2" class="radio-inline" required>
                   女性</label>
@@ -170,7 +170,7 @@
                  data-errors-when="valueMissing"> お住まいを選んでください。 </small> </div>
           </li>
           <li>
-            <div class="left grid-220 mb9" data-states-for="tel">
+            <div class="l-float-left l-w220px mb9" data-states-for="tel">
               <label for="tel">電話番号<small class="color-default">(ハイフン無し半角数字)</small><span class="callout callout-must">必須</span></label>
               <input type="tel"
                  id="tel"
@@ -204,10 +204,10 @@
         <legend class="is-hidden" accesskey="D">希望日時</legend>
         <ul class="mb1em">
           <li class="margin-0">
-            <div class="divider2"></div>
+            <div class="divider2 mb1em"></div>
           </li>
           <li id="js-date" class=" pos-rel">
-            <div class="left" data-states-for="datepicker">
+            <div class="l-float-left" data-states-for="datepicker">
               <label for="datepicker">キャリアカウンセリング希望日</label>
               <input type="text" id="datepicker" name="datepicker" class="date form-input form-addon" placeholder="選択してください" value="選択してください">
               <div data-errors-for="datepicker"> <small class="form-error is-hidden"
@@ -252,8 +252,10 @@
               <p><a rel="leanModal" href="#privacy-policy">プライバシーポリシー</a>を確認し、同意しました。 <span class="callout callout-must">必須</span></p>
               <div data-errors-for="privacy"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 内容を確認しチェックを入れてください。 </small> </div>
-              <div id="privacy-policy"><b>当社は個人情報の保護について以下の取り組みを実施致します。</b>
-                <div class="divider2"></div>
+              <div id="privacy-policy">
+              <div class="privacy-policy-inner">
+              <b>当社は個人情報の保護について以下の取り組みを実施致します。</b>
+                <div class="divider2 mb1em"></div>
                 <dl>
                   <dt>■当社が収集する個人情報</dt>
                   <dd>当社のお取引先、当社に入社希望される方々の個人情報の取扱いについて、個人情報管理責任者を設置し適切且つ安全に管理致します。<br>
@@ -267,6 +269,7 @@
                   <dt>■個人情報保護の為のコンプライアンス・プログラム</dt>
                   <dd>当社は、保有する個人情報に関して適用される法令、規範を尊守するとともに、個人情報保護の為のコンプライアンス・プログラムを制定し、その継続的見直しと改善を通じて個人情報の適切な管理の維持運営に努めてまいります。</dd>
                 </dl>
+              </div>
               </div>
             </div>
           </li>
@@ -319,7 +322,7 @@ $(function(){
                     'autoclose': true
                 });
 </script> 
-<script>//TEXTAREA の初期値をクリックで消す
+<script type="text/javascript">//TEXTAREA の初期値をクリックで消す
 function setupTextareaDes() {
     // 種付け作業
     var textareas = document.getElementsByTagName("textarea");
@@ -340,9 +343,8 @@ function TextareaDes(from) {
 <script type="text/javascript">// モーダルウィンドウ
 $(function() {
     $( 'a[rel*=leanModal]').leanModal({
-        top: 50,                     // モーダルウィンドウの縦位置を指定
+        top: 150,                     // モーダルウィンドウの縦位置を指定
         overlay : 0.5,               // 背面の透明度 
-        closeButton: ".modal_close"  // 閉じるボタンのCSS classを指定
     });
 }); 
 </script>
