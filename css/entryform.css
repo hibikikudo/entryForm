@@ -297,6 +297,9 @@ form small {
   color: #ff6666;
   margin: 0 0 0 1em;
 }
+form .privacy-policy{
+  margin: 0 0 0 1.5em;
+}
 .color-default {
   color: inherit;
   margin: 0 0 0 1em;
