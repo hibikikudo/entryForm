@@ -6,7 +6,7 @@ var toaster = document.querySelector('.toaster');
 new GentleForm('form', function (event, isValid, data) {
   event.preventDefault();
   
-  if (isValid) toast('ご入力頂きありがとうございました！後ほど窓口担当よりご連絡させて頂きます。', 'success');
+  if (isValid) window.location.href = "./confirm.html";
   else toast('ごめんなさい、未入力の項目があったようです。', 'error');
   
   console.log(event, isValid, data);
