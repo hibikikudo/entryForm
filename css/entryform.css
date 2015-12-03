@@ -278,10 +278,10 @@ form .mt-label{
 	width:80px;
 	}
 
-form input {
+form input, form button {
   margin: 0 0 0.5em 0;
   padding: 6px 10px;
-  color: #666;
+  color: #222;
   width:220px;
 }
 form textarea {
@@ -290,7 +290,7 @@ form textarea {
   width: 100%;
   resize: vertical;
     overflow: auto;
-	color: #999;/*説明の装飾;*/
+	color: #222;
 }
 form textarea.nodes {color: inherit;}/*通常の装飾;*/
 form small {
@@ -324,6 +324,7 @@ form select {
   transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
   width: 220px;
   margin: 0 0 0.5em 0;
+  color:#222;
 }
 
 .ml-pref-valid{

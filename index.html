@@ -17,9 +17,10 @@
       ご登録についてご不明点がある場合もお気軽にお問い合わせ下さい。</h2>
   </div>
   <div class="row body">
-    <form name="signup" class="form" novalidate>
+    <form name="signup" class="form" novalidate method="post">
       <fieldset>
         <h3>基本情報をご入力ください</h3>
+        <a href="https://remotestance.com/blog/1447/">リンク</a>
         <ul class="mb5">
           <li class="margin-0">
             <div class="divider2 mb1em"></div>
@@ -58,10 +59,15 @@
                  name="family_name_kana"
                  class="form-input form-addon"
                  placeholder="ヤマダ"
+                 pattern="^[ァ-ン]+$"
                  value=""
                  required>
               <div data-errors-for="family_name_kana"> <small class="form-error is-hidden"
-                 data-errors-when="valueMissing"> 姓をカタカナで入力してください。 </small> </div>
+                 data-errors-when="valueMissing"> 姓をカタカナで入力してください。 </small>
+                 <small class="form-error is-hidden"
+                 data-errors-when="patternMismatch">
+            全角カタカナで入力してください。
+          </small> </div>
             </div>
             <div class="pull-right" data-states-for="first_name_kana">
               <label for="first_name_kana">名 (フリガナ)<span class="callout callout-must">必須</span></label>
@@ -70,10 +76,14 @@
                  name="first_name_kana"
                  class="form-input form-addon"
                  placeholder="タロウ"
+                 pattern="^[ァ-ン]+$"
                  value=""
                  required>
               <div data-errors-for="first_name_kana"> <small class="form-error is-hidden"
-                 data-errors-when="valueMissing"> 名をカタカナで入力してください。 </small> </div>
+                 data-errors-when="valueMissing"> 名をカタカナで入力してください。 </small> <small class="form-error is-hidden"
+                 data-errors-when="patternMismatch">
+            全角カタカナで入力してください。
+          </small></div>
             </div>
           </li>
         </ul>
@@ -182,7 +192,7 @@
                  required>
               <div data-errors-for="tel"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 電話番号を入力してください。 </small> <small class="form-error is-hidden"
-                 data-errors-when="typeMismatch"> ハイフン無しの半角数字で入力してください。 </small> </div>
+                 data-errors-when="patternMismatch"> ハイフン無し半角数字で入力してください。 </small> </div>
             </div>
             <div class="pull-right" data-states-for="email">
               <label for="email">メール<span class="callout callout-must">必須</span></label>
@@ -194,7 +204,12 @@
                  value=""
                  required>
               <div data-errors-for="email"> <small class="form-error is-hidden"
-                 data-errors-when="valueMissing"> メールアドレスを入力してください。 </small></div>
+                 data-errors-when="valueMissing"> メールアドレスを入力してください。 </small>
+                 <small class="form-error is-hidden"
+                 data-errors-when="typeMismatch">
+            @(アットマーク) .(カンマ)はついてますか?
+          </small>
+              </div>
             </div>
           </li>
         </ul>
@@ -232,6 +247,7 @@
                 <option value="2s">14:30</option>
                 <option value="3s">16:30</option>
                 </optgroup>
+                <option value="" disabled>※日曜祝日は休業日です。</option>
               </select>
             </div>
             <div class="ml-time-valid" data-errors-for="time"> <small class="form-error is-hidden"
@@ -244,14 +260,14 @@
         <ul class="mb1em">
           <li class="mb1em">
             <label for="comments">備考欄</label>
-            <textarea cols="46" rows="3" name="comments" accesskey="T" tabindex="3">ご希望・備考等あればお知らせください</textarea>
+            <textarea cols="46" rows="3" name="comments" placeholder="ご希望・備考等あればお知らせください" accesskey="T" tabindex="3"></textarea>
           </li>
           <li>
             <div data-states-for="privacy">
               <input type="checkbox" name="privacy" id="privacy" value="privacy" class="radio-inline" required>
               <p><a rel="leanModal" href="#privacy-policy">プライバシーポリシー</a>を確認し、同意しました。 <span class="callout callout-must">必須</span></p>
               <div data-errors-for="privacy"> <small class="form-error is-hidden privacy-policy"
-                 data-errors-when="valueMissing"> 内容を確認しチェックを入れてください。 </small> </div>
+                 data-errors-when="valueMissing"> 内容を確認のうえチェックを入れてください。 </small> </div>
               <div id="privacy-policy">
               <div class="privacy-policy-inner">
               <b>当社は個人情報の保護について以下の取り組みを実施致します。</b>
@@ -274,8 +290,10 @@
             </div>
           </li>
           <li class="div-center">
-            <input class="btn btn-submit" type="submit" value="登録予約" />
+            <button class="btn btn-submit" type="submit" value="登録予約" />
+            登録予約
           </li>
+          
         </ul>
       </fieldset>
     </form>
@@ -322,24 +340,7 @@ $(function(){
                     'autoclose': true
                 });
 </script> 
-<script type="text/javascript">//TEXTAREA の初期値をクリックで消す
-function setupTextareaDes() {
-    // 種付け作業
-    var textareas = document.getElementsByTagName("textarea");
-    for (i = 0; i < textareas.length; i++) {
-        if (textareas[i].className != "nodes") {
-            textareas[i].onfocus = function (event) { return TextareaDes(this); };
-        }
-    }
-    return;
-}
-function TextareaDes(from) {
-    from.className = "nodes";
-    from.value = "";
-    from.onfocus = function (event) {};// これ以降呼び出されないように、自殺。
-    return;
-}
-</script> 
+
 <script type="text/javascript">// モーダルウィンドウ
 $(function() {
     $( 'a[rel*=leanModal]').leanModal({
@@ -348,5 +349,30 @@ $(function() {
     });
 }); 
 </script>
+<script type="text/javascript">
+$(function() {
+  // フォームの入力欄が更新されたかどうかを表すフラグです。
+  var isChanged = false;
+
+  $(window).bind("beforeunload", function() {
+    console.log(isChanged);
+    if (isChanged) {
+      // isChangedフラグがtrueの場合、つまり入力内容が変更されていた
+      // 場合のみ文字列を返すようにします。
+      return "入力途中の項目があります。";
+    }
+  });
+
+  $("form input, form select, form textarea").change(function() {
+    // 入力内容が更新されている場合は、isChangedフラグをtrueにします。
+    isChanged = true;
+  });
+
+  $("button[type=submit]").click(function() {
+    // フォームをサブミットする前にフラグを落とします。
+    // ※ これをやらないと、サブミット時に確認メッセージが表示されてしまいます。
+    isChanged = false;
+  });
+})</script>
 </body>
 </html>
