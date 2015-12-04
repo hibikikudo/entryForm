@@ -17,7 +17,7 @@
       ご登録についてご不明点がある場合もお気軽にお問い合わせ下さい。</h2>
   </div>
   <div class="row body">
-    <form name="signup" class="form" novalidate method="post" autocomplete="off">
+    <form name="signup" class="form" action="confirm.html" novalidate method="post" autocomplete="off">
       <fieldset>
         <h3>基本情報をご入力ください</h3>
         <ul class="mb5">
@@ -256,7 +256,7 @@
             <label for="comments">備考欄</label>
             <textarea cols="46" rows="3" name="comments" placeholder="ご希望・備考等あればお知らせください" accesskey="T" tabindex="3"></textarea>
           </li>
-          <li class="mb1em">
+          <li>
             <div data-states-for="privacy">
               <input type="checkbox" name="privacy" id="privacy" value="privacy" class="radio-inline" required>
               <p><strong><a rel="leanModal" href="#privacy-policy">プライバシーポリシー</a>を確認し、同意しました。</strong> <span class="callout callout-must">必須</span></p>
@@ -284,8 +284,8 @@
             </div>
           </li>
           <li class="div-center">
-            <button class="btn btn-submit" type="submit" value="登録予約" />
-            登録予約
+            <input class="btn btn-submit" type="submit" value="登録予約" />
+            
           </li>
           
         </ul>
@@ -363,7 +363,7 @@ $(function() {
     isChanged = true;
   });
 
-  $("button[type=submit]").click(function() {
+  $("input[type=submit]").click(function() {
     // フォームをサブミットする前にフラグを落とします。
     // ※ これをやらないと、サブミット時に確認メッセージが表示されてしまいます。
     isChanged = false;
