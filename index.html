@@ -17,7 +17,7 @@
       ご登録についてご不明点がある場合もお気軽にお問い合わせ下さい。</h2>
   </div>
   <div class="row body">
-    <form name="signup" class="form" novalidate method="post">
+    <form name="signup" class="form" novalidate method="post" autocomplete="off">
       <fieldset>
         <h3>基本情報をご入力ください</h3>
         <ul class="mb5">
@@ -56,9 +56,8 @@
               <input type="text"
                  id="family_name_kana"
                  name="family_name_kana"
-                 class="form-input form-addon"
+                 class="form-input form-addon katakana"
                  placeholder="ヤマダ"
-                 pattern="^[ァ-ン]+$"
                  value=""
                  required>
               <div data-errors-for="family_name_kana"> <small class="form-error is-hidden"
@@ -73,16 +72,12 @@
               <input type="text"
                  id="first_name_kana"
                  name="first_name_kana"
-                 class="form-input form-addon"
+                 class="form-input form-addon katakana"
                  placeholder="タロウ"
-                 pattern="^[ァ-ン]+$"
                  value=""
                  required>
               <div data-errors-for="first_name_kana"> <small class="form-error is-hidden"
-                 data-errors-when="valueMissing"> 名をカタカナで入力してください。 </small> <small class="form-error is-hidden"
-                 data-errors-when="patternMismatch">
-            全角カタカナで入力してください。
-          </small></div>
+                 data-errors-when="valueMissing"> 名をカタカナで入力してください。 </small> </div>
             </div>
           </li>
         </ul>
@@ -194,7 +189,7 @@
                  data-errors-when="patternMismatch"> ハイフン無し半角数字で入力してください。 </small> </div>
             </div>
             <div class="pull-right" data-states-for="email">
-              <label for="email">メール<span class="callout callout-must">必須</span></label>
+              <label for="email">メール<small class="color-default">(半角英数)</small><span class="callout callout-must">必須</span></label>
               <input type="email"
                  id="email"
                  name="email"
@@ -261,10 +256,10 @@
             <label for="comments">備考欄</label>
             <textarea cols="46" rows="3" name="comments" placeholder="ご希望・備考等あればお知らせください" accesskey="T" tabindex="3"></textarea>
           </li>
-          <li>
+          <li class="mb1em">
             <div data-states-for="privacy">
               <input type="checkbox" name="privacy" id="privacy" value="privacy" class="radio-inline" required>
-              <p><a rel="leanModal" href="#privacy-policy">プライバシーポリシー</a>を確認し、同意しました。 <span class="callout callout-must">必須</span></p>
+              <p><strong><a rel="leanModal" href="#privacy-policy">プライバシーポリシー</a>を確認し、同意しました。</strong> <span class="callout callout-must">必須</span></p>
               <div data-errors-for="privacy"> <small class="form-error is-hidden privacy-policy"
                  data-errors-when="valueMissing"> 内容を確認のうえチェックを入れてください。 </small> </div>
               <div id="privacy-policy">
@@ -301,7 +296,8 @@
 <script type="text/javascript" src="js/gentle_form.js">//フォームに関するjs</script> 
 <script type="text/javascript" src="js/gentle_form_valid.js">//フォームのバリデーション</script> 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script> 
-<script type="text/javascript" src="js/jquery.autoKana.js">//フリガナ入力支援</script> 
+<script type="text/javascript" src="js/jquery.autoKana.js">//フリガナ入力支援</script>
+<script type="text/javascript" src="js/valueconvertor.js">//ひらがな→カタカナ自動変換</script>
 <script type="text/javascript" src="js/bootstrap-datepicker.js">//日時取得</script> 
 <script type="text/javascript" src="js/jquery.leanModal.min.js">//モーダルウィンドウ</script> 
 <script type="text/javascript">//jquery.autoKana.js フリガナ入力支援
