@@ -96,8 +96,8 @@ form .mt-minus-label2{
 	}
 .l-remarks{
 	width:300px;}
-.l-btns{
-	width:140px;
+.div-center .l-btns{
+	margin-right:1em;
 	}
 .l-float-left {
   float: left;
@@ -188,7 +188,7 @@ Button
 ------------------*/
 .btn {
   display: inline-block;
-  padding: 0.35em 1.5em 0.25em 1.5em;
+  padding: 0.3em 1.5em 0.25em 1.5em;
   margin: 1rem 0 0;
   color: #fff;
   background-color: #b3b3b3;
