@@ -7,7 +7,7 @@ new GentleForm('form', function (event, isValid, data) {
   event.preventDefault();
   
   if (isValid) window.location.href = "./confirm.html";
-  else toast('ごめんなさい、未入力の項目があったようです。', 'error');
+  else toast('うまく登録できませんでした。<br>・必須項目の抜けはありませんか?<br>・プライバシーポリシーのチェックが外れていませんか?', 'error');
   
   console.log(event, isValid, data);
 });
