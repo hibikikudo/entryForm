@@ -17,7 +17,7 @@
       ご登録についてご不明点がある場合もお気軽にお問い合わせ下さい。</h2>
   </div>
   <div class="row body">
-    <form name="signup" class="form" action="confirm.html" novalidate method="post" autocomplete="off">
+    <form name="signup" class="form" action="confirm.html" novalidate method="post" onsubmit="return false;" >
       <fieldset>
         <h3>基本情報をご入力ください</h3>
         <ul class="mb5">
@@ -33,7 +33,8 @@
                  class="form-input form-addon"
                  placeholder="山田"
                  value=""
-                 required>
+                 required
+                 formnovalidate>
               <div data-errors-for="family_name_kanji"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 姓を漢字で入力してください。 </small> </div>
             </div>
@@ -45,7 +46,8 @@
                  class="form-input form-addon"
                  placeholder="太郎"
                  value=""
-                 required>
+                 required
+                 formnovalidate>
               <div data-errors-for="first_name_kanji"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 名を漢字で入力してください。 </small> </div>
             </div>
@@ -59,7 +61,8 @@
                  class="form-input form-addon katakana"
                  placeholder="ヤマダ"
                  value=""
-                 required>
+                 required
+                 formnovalidate>
               <div data-errors-for="family_name_kana"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 姓をカタカナで入力してください。 </small>
                  <small class="form-error is-hidden"
@@ -75,7 +78,8 @@
                  class="form-input form-addon katakana"
                  placeholder="タロウ"
                  value=""
-                 required>
+                 required
+                 formnovalidate>
               <div data-errors-for="first_name_kana"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 名をカタカナで入力してください。 </small> </div>
             </div>
@@ -87,12 +91,12 @@
             <div class="l-float-left" data-states-for="radio">
               <div class="l-float-left mb5">
                 <label class="mt-label" for="radio1">
-                  <input type="radio" name="radio" id="radio1" value="radio1" class="radio-inline" checked required>
+                  <input type="radio" name="radio" id="radio1" value="radio1" class="radio-inline" checked required formnovalidate>
                   男性</label>
               </div>
               <div class="l-float-left">
                 <label class="mt-label" for="radio2">
-                  <input type="radio" name="radio" id="radio2" value="radio2" class="radio-inline" required>
+                  <input type="radio" name="radio" id="radio2" value="radio2" class="radio-inline" required formnovalidate>
                   女性</label>
               </div>
               <div data-errors-for="radio" class=" clearfix"> <small class="form-error is-hidden"
@@ -104,7 +108,8 @@
             		class="form-input form-addon"
             		id="pref"
                     tabindex="1"
-                    required="required">
+                    required="required"
+                    formnovalidate>
                 <optgroup label="北海道・東北">
                 <option value="北海道">北海道</option>
                 <option value="青森県">青森県</option>
@@ -183,7 +188,8 @@
                  placeholder="09012345678"
                  pattern="^[0-9()+\s]{8,13}$"
                  value=""
-                 required>
+                 required
+                 formnovalidate>
               <div data-errors-for="tel"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 電話番号を入力してください。 </small> <small class="form-error is-hidden"
                  data-errors-when="patternMismatch"> ハイフン無し半角数字で入力してください。 </small> </div>
@@ -196,7 +202,8 @@
                  class="form-input form-addon js-characters-change"
                  placeholder="example@mail.com"
                  value=""
-                 required>
+                 required
+                 formnovalidate>
               <div data-errors-for="email"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> メールアドレスを入力してください。 </small>
                  <small class="form-error is-hidden"
@@ -218,7 +225,7 @@
           <li id="js-date" class=" pos-rel">
             <div class="l-float-left" data-states-for="datepicker">
               <label for="datepicker">キャリアカウンセリング希望日</label>
-              <input type="text" id="datepicker" name="datepicker" class="date form-input form-addon" placeholder="選択してください" value="選択してください">
+              <input type="text" id="datepicker" name="datepicker" class="date form-input form-addon" placeholder="選択してください" value="選択してください"formnovalidate>
               <div data-errors-for="datepicker"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 希望日を選んでください。</small> </div>
             </div>
@@ -227,7 +234,8 @@
               <select name="time"
             		class="form-input form-addon"
             		id="time"
-                    tabindex="2">
+                    tabindex="2"
+                    formnovalidate>
                 <option value="" selected disabled>選択してください</option>
                 <optgroup label="平日">
                 <option value="1">11:00 (平日)</option>
@@ -254,11 +262,11 @@
         <ul class="mb1em">
           <li class="mb1em">
             <label for="comments">備考欄</label>
-            <textarea cols="46" rows="3" name="comments" placeholder="ご希望・備考等あればお知らせください" accesskey="T" tabindex="3"></textarea>
+            <textarea cols="46" rows="3" name="comments" placeholder="ご希望・備考等あればお知らせください" accesskey="T" tabindex="3" formnovalidate></textarea>
           </li>
           <li>
             <div data-states-for="privacy">
-              <input type="checkbox" name="privacy" id="privacy" value="privacy" class="radio-inline" required>
+              <input type="checkbox" name="privacy" id="privacy" value="privacy" class="radio-inline" required formnovalidate>
               <p><strong><a rel="leanModal" href="#privacy-policy">プライバシーポリシー</a>を確認し、同意しました。</strong> <span class="callout callout-must">必須</span></p>
               <div data-errors-for="privacy"> <small class="form-error is-hidden privacy-policy"
                  data-errors-when="valueMissing"> 内容を確認のうえチェックを入れてください。 </small> </div>
