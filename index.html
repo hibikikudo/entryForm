@@ -7,8 +7,6 @@
 <link rel="stylesheet" type="text/css" href="css/entryform.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.css" />
 </head>
-
-<body id="entry-form" onload="setupTextareaDes();">
 <div class="toaster" style="display: none;">Yay, the form is valid!</div>
 <section class="entry-form-container">
   <div class="row header">
@@ -266,8 +264,8 @@
           </li>
           <li>
             <div data-states-for="privacy">
-              <input type="checkbox" name="privacy" id="privacy" value="privacy" class="radio-inline" required formnovalidate>
-              <p><strong><a rel="leanModal" href="#privacy-policy">プライバシーポリシー</a>を確認し、同意しました。</strong> <span class="callout callout-must">必須</span></p>
+              <input type="checkbox" name="privacy" id="privacy" value="privacy" class="radio-inline large-checkbox" required formnovalidate>
+              <p><strong><a rel="leanModal" href="#privacy-policy">プライバシーポリシー</a>を確認し、同意しました。</strong><span class="callout callout-must">必須</span></p>
               <div data-errors-for="privacy"> <small class="form-error is-hidden privacy-policy"
                  data-errors-when="valueMissing"> 内容を確認のうえチェックを入れてください。 </small> </div>
               <div id="privacy-policy">
@@ -288,7 +286,11 @@
                   <dd>当社は、保有する個人情報に関して適用される法令、規範を尊守するとともに、個人情報保護の為のコンプライアンス・プログラムを制定し、その継続的見直しと改善を通じて個人情報の適切な管理の維持運営に努めてまいります。</dd>
                 </dl>
               </div>
+              <div >
+              <a class="modal_close"  href="javascript:void(0)"></a>
               </div>
+              </div>
+              
             </div>
           </li>
           <li class="div-center">
@@ -359,6 +361,8 @@ $(function() {
 	$( 'a[rel*=leanModal]').leanModal({
         top: 150,                     // モーダルウィンドウの縦位置を指定
         overlay : 0.5,               // 背面の透明度 
+		closeButton: ".modal_close"  // #modal-windowを閉じるボタンのdivのclass
+
     });
 	});
 	//メソッド bootstrap-datepicker.js

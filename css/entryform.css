@@ -392,6 +392,14 @@ form .radio-inline{
     border: 1px solid #ff6666;
 	float:right;
 }
+
+.large-checkbox {
+  -ms-transform: scale(1.5, 1.5);
+  -webkit-transform: scale(1.5, 1.5);
+  transform: scale(1.5, 1.5);
+  margin-right:5px;
+}
+
 /*---------------------------------------------*\
     GentleForm related styles
 \*---------------------------------------------*/
@@ -512,3 +520,11 @@ form .radio-inline{
 .privacy-policy-inner{
 	padding: 30px;
 	}
+.modal_close { position: absolute; 
+               top: 12px; 
+               right: 12px; 
+               display: block; 
+               width: 16px; 
+               height: 16px; 
+               background: url(../img/close.png); 
+               z-index: 2;}
