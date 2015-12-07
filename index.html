@@ -17,7 +17,7 @@
       ご登録についてご不明点がある場合もお気軽にお問い合わせ下さい。</h2>
   </div>
   <div class="row body">
-    <form name="signup" class="form" action="confirm.html" novalidate method="post" onsubmit="return false;" >
+    <form name="signup" class="form"  novalidate method="post" onsubmit="return false;" >
       <fieldset>
         <h3>基本情報をご入力ください</h3>
         <ul class="mb5">
@@ -307,21 +307,7 @@
 <script type="text/javascript" src="js/jquery.autoKana.js">//フリガナ入力支援</script>
 <script type="text/javascript" src="js/valueconvertor.js">//ひらがな→カタカナ自動変換</script>
 <script type="text/javascript" src="js/bootstrap-datepicker.js">//日時取得</script> 
-<script type="text/javascript" src="js/jquery.leanModal.min.js">//モーダルウィンドウ</script> 
-<script type="text/javascript">//jquery.autoKana.js フリガナ入力支援
-    $(document).ready(
-        function() {               
-            $.fn.autoKana('#family_name_kanji', '#family_name_kana', {
-                katakana : true  //true：カタカナ、false：ひらがな（デフォルト）
-        });
-    });
-	$(document).ready(
-	function() {               
-            $.fn.autoKana('#first_name_kanji', '#first_name_kana', {
-                katakana : true  //true：カタカナ、false：ひらがな（デフォルト）
-        });
-	});
-</script> 
+<script type="text/javascript" src="js/jquery.leanModal.min.js">//モーダルウィンドウ</script>  
 <script type="text/javascript">//メアド、電話の全角文字を半角に自動変換する
 $(function(){
     $(".js-characters-change").blur(function(){
@@ -350,7 +336,7 @@ $(function() {
         top: 150,                     // モーダルウィンドウの縦位置を指定
         overlay : 0.5,               // 背面の透明度 
     });
-}); 
+});
 </script>
 <script type="text/javascript">
 $(function() {
@@ -377,5 +363,16 @@ $(function() {
     isChanged = false;
   });
 })</script>
+<script type="text/javascript">//jquery.autoKana.js フリガナ入力支援
+    $(document).ready(
+        function() {               
+            $.fn.autoKana('#family_name_kanji', '#family_name_kana', {
+                katakana : true  //true：カタカナ、false：ひらがな（デフォルト）
+        });             
+            $.fn.autoKana('#first_name_kanji', '#first_name_kana', {
+                katakana : true  //true：カタカナ、false：ひらがな（デフォルト）
+        });
+	});
+</script>
 </body>
 </html>
