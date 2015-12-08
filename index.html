@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="css/entryform.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.css" />
 </head>
+<body>
 <div class="toaster" style="display: none;">Yay, the form is valid!</div>
 <section class="entry-form-container">
   <div class="row header">
@@ -59,6 +60,7 @@
                  class="form-input form-addon katakana"
                  placeholder="ヤマダ"
                  value=""
+                 pattern="[\u30A1-\u30F6]*"
                  required
                  formnovalidate>
               <div data-errors-for="family_name_kana"> <small class="form-error is-hidden"
@@ -76,6 +78,7 @@
                  class="form-input form-addon katakana"
                  placeholder="タロウ"
                  value=""
+                 pattern="[\u30A1-\u30F6]*"
                  required
                  formnovalidate>
               <div data-errors-for="first_name_kana"> <small class="form-error is-hidden"
@@ -333,7 +336,8 @@ $(function() {
     // ※ これをやらないと、サブミット時に確認メッセージが表示されてしまいます。
     isChanged = false;
   });
-})</script>
+})
+</script>
 <script type="text/javascript">//jquery.autoKana.js フリガナ入力支援
     $(document).ready(
         function() {               
