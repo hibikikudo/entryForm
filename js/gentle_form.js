@@ -6,4 +6,635 @@
  * @author Gabin Aureche
  * @license MIT
  */
-!function(a,b){"object"==typeof exports&&"object"==typeof module?module.exports=b():"function"==typeof define&&define.amd?define(b):"object"==typeof exports?exports.GentleForm=b():a.GentleForm=b()}(this,function(){return function(a){function b(e){if(c[e]){return c[e].exports}var d=c[e]={exports:{},id:e,loaded:!1};return a[e].call(d.exports,d,d.exports,b),d.loaded=!0,d.exports}var c={};return b.m=a,b.c=c,b.p="",b(0)}([function(w,m,g){function b(a){return a&&a.__esModule?a:{"default":a}}function q(a,c){if(!(a instanceof c)){throw new TypeError("Cannot call a class as a function")}}Object.defineProperty(m,"__esModule",{value:!0});var j=function(){function a(c,i){for(var l=0;l<i.length;l++){var f=i[l];f.enumerable=f.enumerable||!1,f.configurable=!0,"value" in f&&(f.writable=!0),Object.defineProperty(c,f.key,f)}}return function(f,i,c){return i&&a(f.prototype,i),c&&a(f,c),f}}(),d=g(1),v=b(d),x=g(15),k=(b(x),{}),h=0,p=function(){function a(l,o){var f=this;q(this,a);var c=this.$form=v["default"](l);this.onSubmit="function"==typeof o?o:function(){},c.on("change",function(i){var n=v["default"](i.target);n.setState("changed",!0,c),f.validate(n)}).on("input",function(i){var n=v["default"](i.target);(n.hasState("changed")||n.hasState("submitted"))&&f.validate(n)}).on("submit",function(r){c.setState("submitted",!0,c);var s=c.validity(),u=s.children,i={};u.forEach(function(y){var A=v["default"](y.element),C=A.attr("type"),B=A.attr("name");if(!(!B||"fieldset"==A.prop("tagName")||A.prop("disabled")||"reset"==C||"submit"==C||"button"==C||"file"==C||B in i)){A.setState("submitted",!0,c),f.validate(A);var z=null;"radio"==C?v["default"]('[name="'+B+']"',c).each(function(n){var D=v["default"](n);D.checked()&&(z=D.val())}):z="checkbox"==C?A.checked():A.val(),i[B]={validity:y.validity,value:z}}}),f.validate(c),f.onSubmit(r,s.valid,i)}),v["default"]("[data-include]",c).each(function(i){var r=v["default"](i),s=r.attr("data-include");"string"!=typeof k[s]&&(k[s]=v["default"]("#"+s).text()),r.html(r.html()+k[s])}),v["default"]("[data-errors-when]",c).hide(),this.refreshAria()}return j(a,[{key:"validate",value:function(c){var f=this;return c.each(function(o){var u=v["default"](o),s=u.validity();s.valid?u.setState("valid",!0,f.$form).setState("invalid",!1,f.$form):u.setState("invalid",!0,f.$form).setState("valid",!1,f.$form);var e=v["default"]('[data-errors-for="'+u.attr("name")+'"]',f.$form),l=void 0;e.each(function(i){for(var n in s){s.hasOwnProperty(n)&&(l=v["default"]('[data-errors-when="'+n+'"]',i),s[n]?l.show():l.hide())}})}),this}},{key:"refreshAria",value:function(){var c=this,f=void 0;return v["default"]("[required], [aria-required]",this.$form).each(function(e){f=v["default"](e),f.prop("required")?f.aria("required",!0):f.removeAttr("aria-required")}),v["default"]("[data-errors-for]",this.$form).each(function(u){f=v["default"](u),f.attr("role","alert").aria("live","assertive").aria("atomic",!0);var s=f.attr("data-errors-for"),e=v["default"]('[name="'+s+'"]',c.$form);if(e.length()){var l=f.attr("id");"string"==typeof l&&l.length||(l="gentle_"+h++,f.attr("id",l));var t=e.aria("describedby");"string"!=typeof t&&(t=""),t=t.split(" "),t.indexOf(l)<0&&t.push(l),e.aria("describedby",t.join(" ").trim())}}),this}}]),a}();m["default"]=p,w.exports=m["default"]},function(f,h,k){function g(a){return a&&a.__esModule?a:{"default":a}}Object.defineProperty(h,"__esModule",{value:!0});var b=k(2),d=g(b),j=k(3),c=g(j);k(4),k(5),k(6),k(7),k(8),k(9),k(12),k(13),k(14),c["default"].fn.setState=function(l,o,p){"invalid"==l&&o===!0||"valid"==l&&o===!1?this.aria("invalid",!0):("invalid"==l&&o===!1||"valid"==l&&o===!0)&&this.aria("invalid",!1);var m="is-"+l,i=new d["default"]('[data-states-for="'+this.attr("name")+'"]',p).add(this.get());return o?i.addClass(m):i.removeClass(m),this},c["default"].fn.hasState=function(a){return this.hasClass("is-"+a)},c["default"].fn.show=function(){return this.aria("hidden",!1).removeClass("is-hidden")},c["default"].fn.hide=function(){return this.aria("hidden",!0).addClass("is-hidden")},h["default"]=d["default"],f.exports=h["default"]},function(c,f,g){var d,b;d=[g(3)],b=function(a){return function(h,i){return new a(h,i)}}.apply(f,d),!(void 0!==b&&(c.exports=b))},function(c,f,g){var d,b;d=[],b=function(){function a(h){var i=arguments.length<=1||void 0===arguments[1]?document:arguments[1];i instanceof a&&(i=i.get(0)),h instanceof a?this._elements=h.get():"string"==typeof h?this._elements=[].slice.call(i.querySelectorAll(h)):h instanceof Array?this._elements=h:this._elements=[h]}return a.fn=a.prototype={constructor:a,get:function(e){return void 0==e?this._elements:this._elements[e]},length:function(){return this._elements.length},each:function(e){return this._elements.forEach(e),this},add:function(h,i){return this._elements=this._elements.concat(new a(h,i).get()),this}},a}.apply(f,d),!(void 0!==b&&(c.exports=b))},function(c,f,g){var d,b;d=[g(3)],b=function(a){return a.fn.on=function(h,i){var j=h.replace(/\s/g,"").split(",");return this.each(function(e){j.forEach(function(k){e.addEventListener(k,i,["focus","blur"].indexOf(k)>-1)})})},a}.apply(f,d),!(void 0!==b&&(c.exports=b))},function(c,f,g){var d,b;d=[g(3)],b=function(a){return a.fn.addClass=function(e){return this.each(function(h){h.classList.add(e)}),this},a.fn.removeClass=function(e){return this.each(function(h){h.classList.remove(e)}),this},a.fn.hasClass=function(e){return this.get(0).classList.contains(e)},a}.apply(f,d),!(void 0!==b&&(c.exports=b))},function(c,f,g){var d,b;d=[g(3)],b=function(a){return a.fn.html=function(e){return arguments.length>0?this.each(function(h){h.innerHTML=e}):this.get(0).innerHTML},a}.apply(f,d),!(void 0!==b&&(c.exports=b))},function(c,f,g){var d,b;d=[g(3)],b=function(a){return a.fn.hasAttr=function(e){return this.get(0).hasAttribute(e)},a.fn.attr=function(h,i){return arguments.length>1?this.each(function(e){e.setAttribute(h,i)}):this.get(0).getAttribute(h)},a.fn.removeAttr=function(e){return this.each(function(h){h.removeAttribute(e)}),this},a}.apply(f,d),!(void 0!==b&&(c.exports=b))},function(c,f,g){var d,b;d=[g(3)],b=function(a){return a.fn.checked=function(e){return arguments.length>0?this.each(function(h){h.checked=!!e}):this.get(0).checked},a}.apply(f,d),!(void 0!==b&&(c.exports=b))},function(c,f,g){var d,b;d=[g(3),g(10),g(11)],b=function(a){return a.fn.validators=[{name:"valueMissing",attribute:"required",isInvalid:function(l){var p=l.attr("type");if("checkbox"==p){return !l.checked()}if("radio"!=p){return l.val().length<=0}var k=l.attr("name");if("string"!=typeof k){return !1}for(var h=new a('[type="radio"][name="'+k+'"]').get(),j=0,m=h.length;m>j;j++){if(new a(h[j]).checked()){return !1}}return !0}},{name:"patternMismatch",attribute:"pattern",isInvalid:function(e){return !new RegExp(e.attr("pattern")).test(e.val())}},{name:"rangeOverflow",attribute:"max",isInvalid:function(e){return e.val()>e.attr("max")}},{name:"rangeUnderflow",attribute:"min",isInvalid:function(e){return e.val()<e.attr("min")}},{name:"tooShort",attribute:"minlength",isInvalid:function(e){return e.val().length<e.attr("minlength")}},{name:"tooLong",attribute:"maxlength",isInvalid:function(e){return e.val().length>e.attr("maxlength")}},{name:"typeMismatch",attribute:"type",isInvalid:function(h){var i=h.attr("type");return"email"==i?!/[^\s]+@[^\s]+/.test(h.val()):"number"==i?/[^0-9]/g.test(h.val()):"url"==i?!/(http|ftp)s?:\/\//.test(h.val()):!1}},{name:"customError"},{name:"stepMismatch"}],a.fn.checkValidity=function(){return this.validity().valid},a.fn.validity=function(){var j=this,k=void 0;if("form"==this.prop("tagName")){var i=function(){var m=j.formChildren();k={valid:!0,children:[]};var e=void 0,l=void 0;return m.forEach(function(o){if(l=new a(o),["button","submit"].indexOf(l.attr("type"))<0&&"button"!=l.tagName){e=new a(o).validity(),k.children.push({element:o,validity:e});for(var n in e){e.hasOwnProperty(n)&&(void 0===k[n]&&(k[n]=e[n]),"valid"==n?e[n]===!1&&(k.valid=!1):e[n]===!0&&(k[n]=!0))}}}),{v:k}}();if("object"==typeof i){return i.v}}k=this.get(0).validity||{};var h={valid:!0};return this.validators.forEach(function(e){var l=!1;h.valid?void 0!==k[e.name]?l=h[e.name]=k[e.name]:"function"==typeof e.isInvalid?l=h[e.name]=e.isInvalid(j):h[e.name]=!1:h[e.name]=!1,l&&(h.valid=!1)}),h},a}.apply(f,d),!(void 0!==b&&(c.exports=b))},function(c,f,g){var d,b;d=[g(3)],b=function(a){return a.fn.prop=function(h,i){if(arguments.length>1){return this.each(function(e){e[h]=i})}var j=this.get(0)[h];return"tagName"==h?j.toLowerCase():j},a}.apply(f,d),!(void 0!==b&&(c.exports=b))},function(c,f,g){var d,b;d=[g(3),g(10)],b=function(a){return a.fn.formChildren=function(){if("form"!==this.prop("tagName")){throw new Error('.formChildren expected element to be a <form> but got "'+this.prop("tagName")+'"')}for(var h=this.get(0),j=[],k=0,i=h.length;i>k;k++){j.push(h[k])}return j},a}.apply(f,d),!(void 0!==b&&(c.exports=b))},function(c,f,g){var d,b;d=[g(3)],b=function(a){return a.fn.val=function(h){return arguments.length>0?this.each(function(j){var i=new a(j),e=i.attr("type");return"checkbox"==e||"radio"==e?i.checked(!!h):void (j.value=h)}):this.get(0).value},a}.apply(f,d),!(void 0!==b&&(c.exports=b))},function(c,f,g){var d,b;d=[g(3),g(7)],b=function(a){return a.fn.aria=function(h,i){return arguments.length>1?this.attr("aria-"+h,i):this.attr("aria-"+h)},a.fn.removeAria=function(e){return this.removeAttr("aria-"+e)},a}.apply(f,d),!(void 0!==b&&(c.exports=b))},function(c,f,g){var d,b;d=[g(3)],b=function(a){return a.fn.text=function(e){return arguments.length>0?this.each(function(h){h.textContent=e}):this.get(0).textContent},a}.apply(f,d),!(void 0!==b&&(c.exports=b))},function(a,b){Object.defineProperty(b,"__esModule",{value:!0}),b["default"]={isButton:function(c){return"button"==c.prop("tagName")||["button","submit"].indexOf(c.attr("type"))>-1}},a.exports=b["default"]}])});var toaster=document.querySelector(".toaster");new GentleForm("form",function(a,c,b){a.preventDefault();if(c){window.location.href="./confirm.html"}else{toast("入力エラーがあります。<br>・必須項目の抜けはありませんか?<br>・プライバシーポリシーのチェックが外れていませんか?","error")}console.log(a,c,b)});var timeout;function toast(b,a){if(a=="success"){toaster.classList.remove("toaster--error");toaster.classList.add("toaster--success")}else{toaster.classList.remove("toaster--success");toaster.classList.add("toaster--error")}toaster.innerHTML=b;toaster.style.display="block";clearTimeout(timeout);timeout=setTimeout(function(){toaster.classList.add("toaster--show");timeout=setTimeout(function(){toaster.classList.remove("toaster--show");timeout=setTimeout(function(){toaster.style.display="none"},300)},5000)},7)};
+
+!function(t, e) {
+    "object" == typeof exports && "object" == typeof module ? module.exports = e() : "function" == typeof define && define.amd ? define(e) : "object" == typeof exports ? exports.GentleForm = e() : t.GentleForm = e()
+}
+(this, function() {
+    return function(t) {
+        function e(r) {
+            if (n[r])
+                return n[r].exports;
+            var a = n[r] = {
+                exports: {},
+                id: r,
+                loaded: !1
+            };
+            return t[r].call(a.exports, a, a.exports, e),
+            a.loaded = !0,
+            a.exports
+        }
+        var n = {};
+        return e.m = t,
+        e.c = n,
+        e.p = "",
+        e(0)
+    }
+    ([function(t, e, n) {
+        "use strict";
+        function r(t) {
+            return t && t.__esModule ? t : {
+                "default": t
+            }
+        }
+        function a(t, e) {
+            if (!(t instanceof e))
+                throw new TypeError("Cannot call a class as a function")
+        }
+        Object.defineProperty(e, "__esModule", {
+            value: !0
+        });
+        var i = function() {
+            function t(t, e) {
+                for (var n = 0; n < e.length; n++) {
+                    var r = e[n];
+                    r.enumerable = r.enumerable || !1,
+                    r.configurable = !0,
+                    "value" in r && (r.writable = !0),
+                    Object.defineProperty(t, r.key, r)
+                }
+            }
+            return function(e, n, r) {
+                return n && t(e.prototype, n),
+                r && t(e, r),
+                e
+            }
+        }
+        ()
+          , o = n(1)
+          , u = r(o)
+          , s = n(15)
+          , f = (r(s),
+        {})
+          , l = 0
+          , c = function() {
+            function t(e, n) {
+                var r = this;
+                a(this, t);
+                var i = this.$form = u["default"](e);
+                this.onSubmit = "function" == typeof n ? n : function() {}
+                ,
+                i.on("change", function(t) {
+                    var e = u["default"](t.target);
+                    e.setState("changed", !0, i),
+                    r.validate(e)
+                }
+                ).on("input", function(t) {
+                    var e = u["default"](t.target);
+                    (e.hasState("changed") || e.hasState("submitted")) && r.validate(e)
+                }
+                ).on("submit", function(t) {
+                    i.setState("submitted", !0, i);
+                    var e = i.validity()
+                      , n = e.children
+                      , a = {};
+                    n.forEach(function(t) {
+                        var e = u["default"](t.element)
+                          , n = e.attr("type")
+                          , o = e.attr("name");
+                        if (!(!o || "fieldset" == e.prop("tagName") || e.prop("disabled") || "reset" == n || "submit" == n || "button" == n || "file" == n || o in a)) {
+                            e.setState("submitted", !0, i),
+                            r.validate(e);
+                            var s = null ;
+                            "radio" == n ? u["default"]('[name="' + o + ']"', i).each(function(t) {
+                                var e = u["default"](t);
+                                e.checked() && (s = e.val())
+                            }
+                            ) : s = "checkbox" == n ? e.checked() : e.val(),
+                            a[o] = {
+                                validity: t.validity,
+                                value: s
+                            }
+                        }
+                    }
+                    ),
+                    r.validate(i),
+                    r.onSubmit(t, e.valid, a)
+                }
+                ),
+                u["default"]("[data-include]", i).each(function(t) {
+                    var e = u["default"](t)
+                      , n = e.attr("data-include");
+                    "string" != typeof f[n] && (f[n] = u["default"]("#" + n).text()),
+                    e.html(e.html() + f[n])
+                }
+                ),
+                u["default"]("[data-errors-when]", i).hide(),
+                this.refreshAria()
+            }
+            return i(t, [{
+                key: "validate",
+                value: function(t) {
+                    var e = this;
+                    return t.each(function(t) {
+                        var n = u["default"](t)
+                          , r = n.validity();
+                        r.valid ? n.setState("valid", !0, e.$form).setState("invalid", !1, e.$form) : n.setState("invalid", !0, e.$form).setState("valid", !1, e.$form);
+                        var a = u["default"]('[data-errors-for="' + n.attr("name") + '"]', e.$form)
+                          , i = void 0;
+                        a.each(function(t) {
+                            for (var e in r)
+                                r.hasOwnProperty(e) && (i = u["default"]('[data-errors-when="' + e + '"]', t),
+                                r[e] ? i.show() : i.hide())
+                        }
+                        )
+                    }
+                    ),
+                    this
+                }
+            }, {
+                key: "refreshAria",
+                value: function() {
+                    var t = this
+                      , e = void 0;
+                    return u["default"]("[required], [aria-required]", this.$form).each(function(t) {
+                        e = u["default"](t),
+                        e.prop("required") ? e.aria("required", !0) : e.removeAttr("aria-required")
+                    }
+                    ),
+                    u["default"]("[data-errors-for]", this.$form).each(function(n) {
+                        e = u["default"](n),
+                        e.attr("role", "alert").aria("live", "assertive").aria("atomic", !0);
+                        var r = e.attr("data-errors-for")
+                          , a = u["default"]('[name="' + r + '"]', t.$form);
+                        if (a.length()) {
+                            var i = e.attr("id");
+                            "string" == typeof i && i.length || (i = "gentle_" + l++,
+                            e.attr("id", i));
+                            var o = a.aria("describedby");
+                            "string" != typeof o && (o = ""),
+                            o = o.split(" "),
+                            o.indexOf(i) < 0 && o.push(i),
+                            a.aria("describedby", o.join(" ").trim())
+                        }
+                    }
+                    ),
+                    this
+                }
+            }]),
+            t
+        }
+        ();
+        e["default"] = c,
+        t.exports = e["default"]
+    }
+    , function(t, e, n) {
+        "use strict";
+        function r(t) {
+            return t && t.__esModule ? t : {
+                "default": t
+            }
+        }
+        Object.defineProperty(e, "__esModule", {
+            value: !0
+        });
+        var a = n(2)
+          , i = r(a)
+          , o = n(3)
+          , u = r(o);
+        n(4),
+        n(5),
+        n(6),
+        n(7),
+        n(8),
+        n(9),
+        n(12),
+        n(13),
+        n(14),
+        u["default"].fn.setState = function(t, e, n) {
+            "invalid" == t && e === !0 || "valid" == t && e === !1 ? this.aria("invalid", !0) : ("invalid" == t && e === !1 || "valid" == t && e === !0) && this.aria("invalid", !1);
+            var r = "is-" + t
+              , a = new i["default"]('[data-states-for="' + this.attr("name") + '"]',n).add(this.get());
+            return e ? a.addClass(r) : a.removeClass(r),
+            this
+        }
+        ,
+        u["default"].fn.hasState = function(t) {
+            return this.hasClass("is-" + t)
+        }
+        ,
+        u["default"].fn.show = function() {
+            return this.aria("hidden", !1).removeClass("is-hidden")
+        }
+        ,
+        u["default"].fn.hide = function() {
+            return this.aria("hidden", !0).addClass("is-hidden")
+        }
+        ,
+        e["default"] = i["default"],
+        t.exports = e["default"]
+    }
+    , function(t, e, n) {
+        var r, a;
+        r = [n(3)],
+        a = function(t) {
+            return function(e, n) {
+                return new t(e,n)
+            }
+        }
+        .apply(e, r),
+        !(void 0 !== a && (t.exports = a))
+    }
+    , function(t, e, n) {
+        var r, a;
+        r = [],
+        a = function() {
+            function t(e) {
+                var n = arguments.length <= 1 || void 0 === arguments[1] ? document : arguments[1];
+                n instanceof t && (n = n.get(0)),
+                e instanceof t ? this._elements = e.get() : "string" == typeof e ? this._elements = [].slice.call(n.querySelectorAll(e)) : e instanceof Array ? this._elements = e : this._elements = [e]
+            }
+            return t.fn = t.prototype = {
+                constructor: t,
+                get: function(t) {
+                    return void 0 == t ? this._elements : this._elements[t]
+                },
+                length: function() {
+                    return this._elements.length
+                },
+                each: function(t) {
+                    return this._elements.forEach(t),
+                    this
+                },
+                add: function(e, n) {
+                    return this._elements = this._elements.concat(new t(e,n).get()),
+                    this
+                }
+            },
+            t
+        }
+        .apply(e, r),
+        !(void 0 !== a && (t.exports = a))
+    }
+    , function(t, e, n) {
+        var r, a;
+        r = [n(3)],
+        a = function(t) {
+            return t.fn.on = function(t, e) {
+                var n = t.replace(/\s/g, "").split(",");
+                return this.each(function(t) {
+                    n.forEach(function(n) {
+                        t.addEventListener(n, e, ["focus", "blur"].indexOf(n) > -1)
+                    }
+                    )
+                }
+                )
+            }
+            ,
+            t
+        }
+        .apply(e, r),
+        !(void 0 !== a && (t.exports = a))
+    }
+    , function(t, e, n) {
+        var r, a;
+        r = [n(3)],
+        a = function(t) {
+            return t.fn.addClass = function(t) {
+                return this.each(function(e) {
+                    e.classList.add(t)
+                }
+                ),
+                this
+            }
+            ,
+            t.fn.removeClass = function(t) {
+                return this.each(function(e) {
+                    e.classList.remove(t)
+                }
+                ),
+                this
+            }
+            ,
+            t.fn.hasClass = function(t) {
+                return this.get(0).classList.contains(t)
+            }
+            ,
+            t
+        }
+        .apply(e, r),
+        !(void 0 !== a && (t.exports = a))
+    }
+    , function(t, e, n) {
+        var r, a;
+        r = [n(3)],
+        a = function(t) {
+            return t.fn.html = function(t) {
+                return arguments.length > 0 ? this.each(function(e) {
+                    e.innerHTML = t
+                }
+                ) : this.get(0).innerHTML
+            }
+            ,
+            t
+        }
+        .apply(e, r),
+        !(void 0 !== a && (t.exports = a))
+    }
+    , function(t, e, n) {
+        var r, a;
+        r = [n(3)],
+        a = function(t) {
+            return t.fn.hasAttr = function(t) {
+                return this.get(0).hasAttribute(t)
+            }
+            ,
+            t.fn.attr = function(t, e) {
+                return arguments.length > 1 ? this.each(function(n) {
+                    n.setAttribute(t, e)
+                }
+                ) : this.get(0).getAttribute(t)
+            }
+            ,
+            t.fn.removeAttr = function(t) {
+                return this.each(function(e) {
+                    e.removeAttribute(t)
+                }
+                ),
+                this
+            }
+            ,
+            t
+        }
+        .apply(e, r),
+        !(void 0 !== a && (t.exports = a))
+    }
+    , function(t, e, n) {
+        var r, a;
+        r = [n(3)],
+        a = function(t) {
+            return t.fn.checked = function(t) {
+                return arguments.length > 0 ? this.each(function(e) {
+                    e.checked = !!t
+                }
+                ) : this.get(0).checked
+            }
+            ,
+            t
+        }
+        .apply(e, r),
+        !(void 0 !== a && (t.exports = a))
+    }
+    , function(t, e, n) {
+        var r, a;
+        r = [n(3), n(10), n(11)],
+        a = function(t) {
+            return t.fn.validators = [{
+                name: "valueMissing",
+                attribute: "required",
+                isInvalid: function(e) {
+                    var n = e.attr("type");
+                    if ("checkbox" == n)
+                        return !e.checked();
+                    if ("radio" != n)
+                        return e.val().length <= 0;
+                    var r = e.attr("name");
+                    if ("string" != typeof r)
+                        return !1;
+                    for (var a = new t('[type="radio"][name="' + r + '"]').get(), i = 0, o = a.length; o > i; i++)
+                        if (new t(a[i]).checked())
+                            return !1;
+                    return !0
+                }
+            }, {
+                name: "patternMismatch",
+                attribute: "pattern",
+                isInvalid: function(t) {
+                    return !new RegExp(t.attr("pattern")).test(t.val())
+                }
+            }, {
+                name: "rangeOverflow",
+                attribute: "max",
+                isInvalid: function(t) {
+                    return t.val() > t.attr("max")
+                }
+            }, {
+                name: "rangeUnderflow",
+                attribute: "min",
+                isInvalid: function(t) {
+                    return t.val() < t.attr("min")
+                }
+            }, {
+                name: "tooShort",
+                attribute: "minlength",
+                isInvalid: function(t) {
+                    return t.val().length < t.attr("minlength")
+                }
+            }, {
+                name: "tooLong",
+                attribute: "maxlength",
+                isInvalid: function(t) {
+                    return t.val().length > t.attr("maxlength")
+                }
+            }, {
+                name: "typeMismatch",
+                attribute: "type",
+                isInvalid: function(t) {
+                    var e = t.attr("type");
+                    return "email" == e ? !/[^\s]+@[^\s]+/.test(t.val()) : "number" == e ? /[^0-9]/g.test(t.val()) : "url" == e ? !/(http|ftp)s?:\/\//.test(t.val()) : !1
+                }
+            }, {
+                name: "customError"
+            }, {
+                name: "stepMismatch"
+            }],
+            t.fn.checkValidity = function() {
+                return this.validity().valid
+            }
+            ,
+            t.fn.validity = function() {
+                var e = this
+                  , n = void 0;
+                if ("form" == this.prop("tagName")) {
+                    var r = function() {
+                        var r = e.formChildren();
+                        n = {
+                            valid: !0,
+                            children: []
+                        };
+                        var a = void 0
+                          , i = void 0;
+                        return r.forEach(function(e) {
+                            if (i = new t(e),
+                            ["button", "submit"].indexOf(i.attr("type")) < 0 && "button" != i.tagName) {
+                                a = new t(e).validity(),
+                                n.children.push({
+                                    element: e,
+                                    validity: a
+                                });
+                                for (var r in a)
+                                    a.hasOwnProperty(r) && (void 0 === n[r] && (n[r] = a[r]),
+                                    "valid" == r ? a[r] === !1 && (n.valid = !1) : a[r] === !0 && (n[r] = !0))
+                            }
+                        }
+                        ),
+                        {
+                            v: n
+                        }
+                    }
+                    ();
+                    if ("object" == typeof r)
+                        return r.v
+                }
+                n = this.get(0).validity || {};
+                var a = {
+                    valid: !0
+                };
+                return this.validators.forEach(function(t) {
+                    var r = !1;
+                    a.valid ? void 0 !== n[t.name] ? r = a[t.name] = n[t.name] : "function" == typeof t.isInvalid ? r = a[t.name] = t.isInvalid(e) : a[t.name] = !1 : a[t.name] = !1,
+                    r && (a.valid = !1)
+                }
+                ),
+                a
+            }
+            ,
+            t
+        }
+        .apply(e, r),
+        !(void 0 !== a && (t.exports = a))
+    }
+    , function(t, e, n) {
+        var r, a;
+        r = [n(3)],
+        a = function(t) {
+            return t.fn.prop = function(t, e) {
+                if (arguments.length > 1)
+                    return this.each(function(n) {
+                        n[t] = e
+                    }
+                    );
+                var n = this.get(0)[t];
+                return "tagName" == t ? n.toLowerCase() : n
+            }
+            ,
+            t
+        }
+        .apply(e, r),
+        !(void 0 !== a && (t.exports = a))
+    }
+    , function(t, e, n) {
+        var r, a;
+        r = [n(3), n(10)],
+        a = function(t) {
+            return t.fn.formChildren = function() {
+                if ("form" !== this.prop("tagName"))
+                    throw new Error('.formChildren expected element to be a <form> but got "' + this.prop("tagName") + '"');
+                for (var t = this.get(0), e = [], n = 0, r = t.length; r > n; n++)
+                    e.push(t[n]);
+                return e
+            }
+            ,
+            t
+        }
+        .apply(e, r),
+        !(void 0 !== a && (t.exports = a))
+    }
+    , function(t, e, n) {
+        var r, a;
+        r = [n(3)],
+        a = function(t) {
+            return t.fn.val = function(e) {
+                return arguments.length > 0 ? this.each(function(n) {
+                    var r = new t(n)
+                      , a = r.attr("type");
+                    return "checkbox" == a || "radio" == a ? r.checked(!!e) : void (n.value = e)
+                }
+                ) : this.get(0).value
+            }
+            ,
+            t
+        }
+        .apply(e, r),
+        !(void 0 !== a && (t.exports = a))
+    }
+    , function(t, e, n) {
+        var r, a;
+        r = [n(3), n(7)],
+        a = function(t) {
+            return t.fn.aria = function(t, e) {
+                return arguments.length > 1 ? this.attr("aria-" + t, e) : this.attr("aria-" + t)
+            }
+            ,
+            t.fn.removeAria = function(t) {
+                return this.removeAttr("aria-" + t)
+            }
+            ,
+            t
+        }
+        .apply(e, r),
+        !(void 0 !== a && (t.exports = a))
+    }
+    , function(t, e, n) {
+        var r, a;
+        r = [n(3)],
+        a = function(t) {
+            return t.fn.text = function(t) {
+                return arguments.length > 0 ? this.each(function(e) {
+                    e.textContent = t
+                }
+                ) : this.get(0).textContent
+            }
+            ,
+            t
+        }
+        .apply(e, r),
+        !(void 0 !== a && (t.exports = a))
+    }
+    , function(t, e) {
+        "use strict";
+        Object.defineProperty(e, "__esModule", {
+            value: !0
+        }),
+        e["default"] = {
+            isButton: function(t) {
+                return "button" == t.prop("tagName") || ["button", "submit"].indexOf(t.attr("type")) > -1
+            }
+        },
+        t.exports = e["default"]
+    }
+    ])
+}
+);
+
+// This is a demo of GentleForm:
+// https://github.com/Zhouzi/GentleForm
+
+var toaster = document.querySelector('.toaster');
+
+new GentleForm('form', function (event, isValid, data) {
+  event.preventDefault();
+  
+  if (isValid) window.location.href = "./confirm.html";
+  else toast('入力エラーがあります。<br>・必須項目の抜けはありませんか?<br>・プライバシーポリシーのチェックが外れていませんか?', 'error');
+  
+  console.log(event, isValid, data);
+});
+
+var timeout;
+function toast (msg, type) {
+  if (type == 'success') {
+    toaster.classList.remove('toaster--error');
+    toaster.classList.add('toaster--success');
+  } else {
+    toaster.classList.remove('toaster--success');
+    toaster.classList.add('toaster--error');
+  }
+  
+  toaster.innerHTML = msg;
+  toaster.style.display = 'block';
+  
+  clearTimeout(timeout);
+  
+  timeout = setTimeout(function () {
+    toaster.classList.add('toaster--show');
+    
+    timeout = setTimeout(function () {
+      toaster.classList.remove('toaster--show');
+      
+      timeout = setTimeout(function () {
+        toaster.style.display = 'none';
+      }, 300);
+    }, 5000);
+  }, 7);
+}
