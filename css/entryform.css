@@ -123,7 +123,7 @@ div,textarea,input {
 
 .row {
   width: 100%;
-  margin: 0 0 1em 0;
+  margin: 0 0 2em 0;
   padding: 0 2.5em;
 }
 .header {
@@ -374,7 +374,6 @@ form .radio-inline,form .checkbox-inline {
 form .radio-inline{
 	width:1rem;
 	float:left;
-	 top:6px;
 	 margin-top: 1px;
 	}
 
@@ -384,7 +383,7 @@ form .radio-inline{
   font-weight: normal;
   font-size:0.8em;
   margin: 0 0 0 4px;
-  padding: 0 2px;
+  padding: .1em .2em 0 .2em;
 }
 
 .callout-must {
@@ -393,13 +392,13 @@ form .radio-inline{
     border: 1px solid #ff6666;
 	float:right;
 }
-.callout-must-left {
+p .callout-must-left {
     color: #ff6666;
     border-radius: 2px;
     border: 1px solid #ff6666;
 	float:left;
+	margin-right:5px;
 }
-
 
 .large-checkbox {
   -ms-transform: scale(1.5, 1.5);
