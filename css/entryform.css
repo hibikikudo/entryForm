@@ -393,6 +393,13 @@ form .radio-inline{
     border: 1px solid #ff6666;
 	float:right;
 }
+.callout-must-left {
+    color: #ff6666;
+    border-radius: 2px;
+    border: 1px solid #ff6666;
+	float:left;
+}
+
 
 .large-checkbox {
   -ms-transform: scale(1.5, 1.5);
