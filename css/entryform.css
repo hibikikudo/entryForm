@@ -84,12 +84,21 @@ form .mt-minus-label2{
 .ml-pref-cell{
 	margin-left:77px;
 }
+.ml-birth-cell{
+	margin-left:20px;
+	}
+.ml-birth-cell2{
+	margin-left:32px;
+	}
 .is-text-centering{
 	text-align:center;
 	}
 .l-dt{
 	width:140px;
 	color: #006993;
+	}
+.l-w100px{
+	width:100px;
 	}
 .l-w220px{
 	width:220px;
@@ -124,10 +133,10 @@ div,textarea,input {
 .row {
   width: 100%;
   margin: 0 0 2em 0;
-  padding: 0 2.5em;
+  padding: 0 35px;
 }
 .header {
-  padding: 1.5em 2.5em;
+  padding: 1.5em 35px;
   border-bottom: 1px solid #ccc;
   background: url(../img/background01.jpg);
   color: #fff;
@@ -399,6 +408,14 @@ form .radio-inline{
     border: 1px solid #ff6666;
 	float:right;
 }
+.callout-must-ab{
+    color: #ff6666;
+    border-radius: 2px;
+    border: 1px solid #ff6666;
+	float:right;
+	position:absolute;
+	left:40.5%;
+}
 p .callout-must-left {
     color: #ff6666;
     border-radius: 2px;
@@ -542,3 +559,13 @@ p .callout-must-left {
                height: 16px; 
                background: url(../img/close.png); 
                z-index: 2;}
+.ml-birth-month-valid{
+	position:absolute;
+	right:118px;
+	top:52px;
+	}
+.ml-birth-day-valid{
+	position:absolute;
+	right:-2px;
+	top:52px;
+	}

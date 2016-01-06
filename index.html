@@ -12,7 +12,7 @@
 <body id="entry-form">
 <div class="toaster" style="display: none;">Yay, the form is valid!</div>
 <section class="entry-form-container">
-  <div class="row header2">
+  <div class="row header">
     <h1>登録予約フォーム</h1>
     <h2>ご入力いただけましたら、追って弊社よりご連絡差し上げます。<br>
       ご登録についてご不明点がある場合もお気軽にお問い合わせ下さい。</h2>
@@ -45,7 +45,8 @@
         <div data-errors-for="first_name_kanji"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 名を漢字で入力してください。 </small> </div>
       </div>
-      <div class="l-float-left" data-states-for="family_name_kana">
+      
+      <div class="l-float-left mb5" data-states-for="family_name_kana">
         <label for="family_name_kana" >姓 (フリガナ) <span class="callout callout-must">必須</span></label>
         <input type="text"
                  id="family_name_kana"
@@ -59,7 +60,7 @@
                  data-errors-when="valueMissing"> 姓をカタカナで入力してください。 </small> <small class="form-error is-hidden"
                  data-errors-when="patternMismatch"> 全角カタカナで入力してください。 </small> </div>
       </div>
-      <div class="pull-right" data-states-for="first_name_kana">
+      <div class="pull-right mb5" data-states-for="first_name_kana">
         <label for="first_name_kana">名 (フリガナ)<span class="callout callout-must">必須</span></label>
         <input type="text"
                  id="first_name_kana"
@@ -72,9 +73,8 @@
         <div data-errors-for="first_name_kana"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 名をカタカナで入力してください。 </small> </div>
       </div>
-     
       <div class="l-float-left" data-states-for="radio">
-      <div class="l-w220px"> <i>性別<span class="callout callout-must">必須</span></i> </div>
+        <div class="l-w220px"> <i>性別<span class="callout callout-must">必須</span></i> </div>
         <div class="l-float-left mb5">
           <label class="mt-label" for="radio1">
             <input type="radio" name="radio" id="radio1" value="radio1" class="radio-inline" checked required formnovalidate>
@@ -88,7 +88,6 @@
         <div data-errors-for="radio" class=" clearfix"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 性別を選んでください。 </small> </div>
       </div>
-      
       <div class=" pull-right pos-rel mb5" data-states-for="pref">
         <label for="pref">お住まい<span class="callout callout-must">必須</span></label>
         <select name="pref"
@@ -166,6 +165,129 @@
       <div data-errors-for="pref" class="ml-pref-valid"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> お住まいを選んでください。 </small> </div>
       <div class="clearfix"></div>
+      <div class=" mb5 l-float-left " data-states-for="birth_yaer">
+        <label for="birth_year">誕生年 <span class="callout callout-must">必須</span></label>
+        <select name="birth_yaer"
+                class="form-input form-addon"
+                id="birth_yaer"
+                    tabindex="1"
+                    required="required"
+                    formnovalidate>
+          <option value="1965">1965年</option>
+          <option value="1966">1966年</option>
+          <option value="1967">1967年</option>
+          <option value="1968">1968年</option>
+          <option value="1969">1969年</option>
+          <option value="1970">1970年</option>
+          <option value="1971">1971年</option>
+          <option value="1972">1972年</option>
+          <option value="1973">1973年</option>
+          <option value="1974">1974年</option>
+          <option value="1975">1975年</option>
+          <option value="1976">1976年</option>
+          <option value="1977">1977年</option>
+          <option value="1978">1978年</option>
+          <option value="1979">1979年</option>
+          <option value="1980">1980年</option>
+          <option value="1981">1981年</option>
+          <option value="1982">1982年</option>
+          <option value="1983">1983年</option>
+          <option value="1984">1984年</option>
+          <option value="1985">1985年</option>
+          <option value="1986">1986年</option>
+          <option value="1987">1987年</option>
+          <option value="1988">1988年</option>
+          <option value="1989">1989年</option>
+          <option value="1990" selected>1990年</option>
+          <option value="1991">1991年</option>
+          <option value="1992">1992年</option>
+          <option value="1993">1993年</option>
+          <option value="1994">1994年</option>
+          <option value="1995">1995年</option>
+          <option value="1996">1996年</option>
+          <option value="1997">1997年</option>
+          <option value="1998">1998年</option>
+          <option value="1999">1999年</option>
+          <option value="2000">2000年</option>
+        </select>
+      </div>
+      <div data-errors-for="birth_year" class="ml-pref-valid"> <small class="form-error is-hidden"
+                 data-errors-when="valueMissing"> 生年月日をご入力ください。 </small> </div>
+                 
+ <div class=" mb5 l-float-left ml-birth-cell2 l-w100px" data-states-for="birth">
+ <label for="birth_month">誕生月 <span class="callout callout-must">必須</span></label>
+        <select name="birth_month"
+                class="form-input form-addon l-w100px"
+                id="birth_month"
+                    tabindex="1"
+                    required="required"
+                    formnovalidate>
+                    <option value="" selected disabled>--</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+        </select>
+      </div>
+     
+                 
+      <div class=" mb5 l-w100px l-float-left ml-birth-cell" data-states-for="birth">
+        <label for="birth_day">誕生日 <span class="callout callout-must">必須</span></label>
+        <select name="birth_day"
+                class="form-input form-addon l-w100px"
+                id="birth_day"
+                    tabindex="1"
+                    required="required"
+                    formnovalidate>
+          <option value="" selected disabled>--</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+        </select>
+      </div>
+      <div class="pos-rel">
+       <div data-errors-for="birth_month" class="ml-birth-month-valid"> <small class="form-error is-hidden"
+                 data-errors-when="valueMissing"> 月をご入力ください。 </small> </div>
+      <div data-errors-for="birth_day" class="ml-birth-day-valid"> <small class="form-error is-hidden"
+                 data-errors-when="valueMissing"> 日をご入力ください。 </small> </div>
+      </div>
+      
       <div class="l-float-left l-w220px mb9" data-states-for="tel">
         <label for="tel">電話番号<small class="color-default">(ハイフン無し半角数字)</small><span class="callout callout-must">必須</span></label>
         <input type="tel"
@@ -196,11 +318,12 @@
                  data-errors-when="typeMismatch"> @(アットマーク) .(カンマ)はついてますか? </small> </div>
       </div>
       <div class="clearfix"></div>
+      
       <h3>キャリアカウンセリングを予約する</h3>
       <div class="divider2 mb1em"></div>
       <div id="js-date" class="l-float-left" data-states-for="datepicker">
         <label for="datepicker">キャリアカウンセリング希望日</label>
-              <input type="text" id="datepicker" name="datepicker" class="date form-input form-addon" placeholder="選択してください" value="選択してください"formnovalidate>
+        <input type="text" id="datepicker" name="datepicker" class="date form-input form-addon" placeholder="選択してください" value="選択してください"formnovalidate>
         <div data-errors-for="datepicker"> <small class="form-error is-hidden"
                  data-errors-when="valueMissing"> 希望日を選んでください。</small> </div>
       </div>
@@ -231,12 +354,12 @@
                  data-errors-when="valueMissing"> 希望時間を選んでください。 </small> </div>
       <div class="clearfix"></div>
       <div class="mb1em">
-            <label for="comments">備考欄</label>
-            <textarea cols="46" rows="3" name="comments" placeholder="ご希望・備考等あればお知らせください" accesskey="T" tabindex="3" formnovalidate></textarea>
-          </div>
+        <label for="comments">備考欄</label>
+        <textarea cols="46" rows="3" name="comments" placeholder="ご希望・備考等あればお知らせください" accesskey="T" tabindex="3" formnovalidate></textarea>
+      </div>
       <div data-states-for="privacy">
         <input type="checkbox" name="privacy" id="privacy" value="privacy"class=" margin-0 radio-inline large-checkbox form-addon " required formnovalidate>
-       <p><span class="callout callout-must-left">必須</span><strong><a rel="leanModal" href="#privacy-policy">プライバシーポリシー</a>を確認し、同意しました。</strong></p>
+        <p><span class="callout callout-must-left">必須</span><strong><a rel="leanModal" href="#privacy-policy">プライバシーポリシー</a>を確認し、同意しました。</strong></p>
         <div data-errors-for="privacy"> <small class="form-error is-hidden privacy-policy"
                  data-errors-when="valueMissing"> 内容を確認のうえチェックを入れてください。 </small> </div>
         <div id="privacy-policy">
